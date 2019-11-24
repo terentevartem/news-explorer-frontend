@@ -5,7 +5,6 @@ npm-debug.log*
 
 # Dependency directory
 node_modules
-package-lock.json
 dist
 
 # Optional npm cache directory
@@ -14,5 +13,10 @@ dist
 # Optional REPL history
 .DS_Store
 .idea
+.vscode
+.sublime
 *.log
 *.env
+
+
+Thumbs.db
