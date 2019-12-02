@@ -1,12 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Webpack</title>
-    <link rel="stylesheet" href="style.1053e10182114e69e1c7.css">
-</head>
-<body>
-    <h1>Hello2</h1>
-    <script src="main.44c4fdbd6bff0e2d5b53.js"></script>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NewsExplorer</title>
+    <link rel="stylesheet" href="./pages/index.css">
+    <!-- <link rel="stylesheet" href="style.dfa5b8bb2a7bc1860b3f.css"> -->
+  </head>
+  <body>
+    <div class="root">
+        <header class="header">
+            <div class="header__top-container">
+              <div class="header__logo">
+                NewsExplorer
+              </div>
+              <div class="header__menu">
+                <div class="header__button_main">
+                  Главная
+                </div>
+                <div class="header__button_about">
+                  О проекте
+                </div>
+                <div class="header__button_login-rectangle">
+                  <div class="header__button_login">
+                    Авторизоваться
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__botton-container">
+              <div class="header__title">
+                Что в мире творится?
+              </div>
+              <div class="header__description">
+                Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+              </div>
+              <div class="header__search">
+                <div class="search__input">
+                  <div class="search__input_text">
+                      Природа
+                  </div>
+                </div>
+                <div class="search__button">
+                  <div class="search__button_text">
+                      Искать
+                  </div>
+                </div>
+              </div>
+            </div>
+        </header>
+        <div class="searching-results">
+          <div class="searching-results__container">
+            <div class="title">
+              Результаты поиска
+            </div>
+            <div class="cards">
+              <div class="cards__item">
+                <div class="cards__contents">
+                  <div class="cards__save-button">
+                    <div class="save-button__icon">
+                    </div>
+                  </div>
+                  <div class="cards__date">
+                    2 августа, 2019
+                  </div>
+                  <div class="cards__title">
+                    Национальное достояние – парки
+                  </div>
+                  <div class="cards__description">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </div>
+                  <div class="cards__author">
+                    Лента.ру
+                  </div>
+                </div>
+              </div>
+              <div class="cards__item">
+                <div class="cards__contents">
+                  <div class="cards__save-button">
+                    <div class="save-button__icon">
+                    </div>
+                  </div>
+                  <div class="cards__date">
+                    2 августа, 2019
+                  </div>
+                  <div class="cards__title">
+                    Национальное достояние – парки
+                  </div>
+                  <div class="cards__description">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </div>
+                  <div class="cards__author">
+                    Лента.ру
+                  </div>
+                </div>
+              </div>
+              <div class="cards__item">
+                  <div class="cards__contents">
+                    <div class="cards__save-button">
+                      <div class="save-button__icon">
+                      </div>
+                    </div>
+                    <div class="cards__date">
+                      2 августа, 2019
+                    </div>
+                    <div class="cards__title">
+                      Национальное достояние – парки
+                    </div>
+                    <div class="cards__description">
+                      В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                    </div>
+                    <div class="cards__author">
+                      Лента.ру
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="searching-results__button">
+                <div class="searching-results__button_text">
+                    Показать еще
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="searching-results">
+            <div class="searching-results__container">
+                <i class="circle-preloader"></i>
+                <div class="preloader_text">
+                  Идет поиск новостей...
+                </div>
+            </div>
+        </div>
+        <div class="searching-results">
+            <div class="searching-results__container">
+              <div class="nothing-found_image">
+              </div>
+              <div class="nothing-found_text">
+                Ничего не найдено
+              </div>
+              <div class="preloader_text">
+                К сожалению по вашему запросу<br>ничего не найдено.
+              </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about__avatar">
+            </div>
+            <div class="about__container">
+              <div class="title">
+                Об авторе
+              </div>
+              <div class="about__description">
+                Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+                <br><br>
+                Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+              </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer__copyright">
+            © 2019 news-explorer.ga
+          </div>
+          <div class="footer__menu">
+            <div class="footer__button">
+              Главная
+            </div>
+            <div class="footer__button">
+              О проекте
+            </div>
+            <div class="footer__button">
+              Яндекс.Практикум
+            </div>
+          </div>
+          <div class="footer__icon">
+            <div class="icon__github">
+            </div>
+            <div class="icon__fb">
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+    <!-- <script src="main.44c4fdbd6bff0e2d5b53.js"></script> -->
+  </body>
 </html>
