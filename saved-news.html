@@ -4,59 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewsExplorer</title>
+    <title>Сохранённые статьи - NewsExplorer</title>
     <link rel="stylesheet" href="./pages/index.css">
     <!-- <link rel="stylesheet" href="style.5171c3c4bb1988d457b1.css"> -->
   </head>
   <body>
     <div class="root">
-        <header class="header">
-            <div class="header__top-container">
-              <div class="header__logo color-white">
+        <header class="header-saved-news">
+            <div class="header__top-container-saved-news">
+              <div class="header__logo color-black">
                 NewsExplorer
               </div>
               <div class="header__menu">
-                <a href="./index.html" class="header__button_main color-white">
+                <a href="./index.html" class="header__button_main-saved-news color-black">
                   Главная
                 </a>
                 <a href="./about.html" class="header__button_about color-gray">
                   О проекте
                 </a>
-                <div class="header__button_login-rectangle color-white">
-                  <div class="header__button_login color-white">
-                    Авторизоваться
+                <a href="./saved-news.html" class="header__button_saved-news color-black box-shadow">
+                  Сохраненные статьи
+                </a>
+                <div class="header__button_login-rectangle-saved-news color-black">
+                   <div class="header__button-exit">
+                    <div class="header__button_login color-black">
+                      Грета
+                    </div>
+                    <div class="button_login_icon-exit">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="header__botton-container">
-              <div class="header__title">
-                Что в мире творится?
-              </div>
-              <div class="header__description">
-                Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
-              </div>
-              <div class="header__search">
-                <div class="search__input">
-                  <div class="search__input_text">
-                      Природа
-                  </div>
-                </div>
-                <div class="search__button">
-                  <div class="search__button_text">
-                      Искать
-                  </div>
-                </div>
-              </div>
+            <div class="header__pages-title">
+              Сохранённые статьи
+            </div>
+            <div class="title-saved-news">
+              Грета, у вас 5<br> сохранённых статей
+            </div>
+            <div class="header__keywords">
+              По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b>
             </div>
         </header>
         <div class="searching-results">
-          <div class="searching-results__container">
-            <div class="title">
-              Результаты поиска
-            </div>
+          <div class="saved-news__container">
             <div class="cards">
-              <div class="cards__item">
+              <div class="cards__item-saved-news">
                 <div class="cards__contents">
                   <div class="cards__save-button">
                     <div class="save-button__icon">
@@ -76,7 +69,7 @@
                   </div>
                 </div>
               </div>
-              <div class="cards__item">
+              <div class="cards__item-saved-news">
                 <div class="cards__contents">
                   <div class="cards__save-button">
                     <div class="save-button__icon">
@@ -96,7 +89,7 @@
                   </div>
                 </div>
               </div>
-              <div class="cards__item">
+              <div class="cards__item-saved-news">
                   <div class="cards__contents">
                     <div class="cards__save-button">
                       <div class="save-button__icon">
@@ -117,45 +110,6 @@
                   </div>
                 </div>
             </div>
-            <div class="searching-results__button">
-                <div class="searching-results__button_text">
-                    Показать еще
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="searching-results">
-            <div class="searching-results__container">
-                <i class="circle-preloader"></i>
-                <div class="preloader_text">
-                  Идет поиск новостей...
-                </div>
-            </div>
-        </div>
-        <div class="searching-results">
-            <div class="searching-results__container">
-              <div class="nothing-found_image">
-              </div>
-              <div class="nothing-found_text">
-                Ничего не найдено
-              </div>
-              <div class="preloader_text">
-                К сожалению по вашему запросу<br>ничего не найдено.
-              </div>
-            </div>
-        </div>
-        <div class="about">
-            <div class="about__avatar">
-            </div>
-            <div class="about__container">
-              <div class="title">
-                Об авторе
-              </div>
-              <div class="about__description">
-                Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
-                <br><br>
-                Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
-              </div>
           </div>
         </div>
         <div class="footer">
