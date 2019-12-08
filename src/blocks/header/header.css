@@ -1,0 +1,585 @@
+.header {
+  height: 576px;
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+}
+
+.header__top-container {
+  height: 80px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__top-container-box-shadow {
+  box-shadow: inset 0px -1px 0px #D1D2D6;
+}
+
+.header__logo {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-left: 104px;
+  color: #FFF;
+}
+
+.header__menu {
+  margin-right: 104px;
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header__button_main {
+color: #FFF;
+  margin-top: 30px;
+  border-bottom: 3px solid #ffffff;
+}
+
+.header__button_main-saved-news {
+  margin-top: 30px;
+}
+
+.header__button_saved-news {
+  margin-top: 30px;
+  margin-left: 34px;
+  color: #000;
+}
+
+.header__button_about {
+  margin-top: 30px;
+  margin-left: 34px;
+  display: flex;
+  color: #000;
+}
+
+.header__button_gray {
+  color: #B6BCBF;
+}
+
+.header__button_gray:hover {
+  color: #FFF;
+}
+
+.header__button_black {
+  color: #B6BCBF;
+}
+
+.header__button_black:hover {
+  color: #000;
+}
+
+.header__button_authorization-container {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 13px;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 176px;
+  margin-left: 32px;
+}
+
+.header__button_authorization-container-saved-news {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 13px;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 112px;
+  margin-left: 32px;
+}
+
+.header__button_logout_icon{
+  height: 16px;
+  width: 17px;
+  margin: auto auto auto 10px;
+  background-image: url(../../images/union.svg);
+}
+
+.header__button_logout {
+  display: flex;
+  margin: auto;
+}
+
+.header__button_login {
+  margin: auto;
+}
+
+.header__bottom-container {
+  margin: auto;
+  width: 608px;
+  height: 336px;
+}
+
+.header__title {
+  width: 608px;
+  height: 128px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+  color: #FFF;
+  margin-top: 80px;
+}
+
+.header__subtitle {
+  margin-left: 104px;
+  margin-top: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+}
+
+.header__subtitle-saved-news {
+    margin-left: 104px;
+    margin-top: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+  }
+
+.header__title-saved-news {
+  margin-left: 104px;
+  margin-top: 28px;
+  width: 712px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+}
+
+.header__title-about {
+    margin-left: 104px;
+    margin-top: 80px;
+    width: 712px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+  }
+
+.header__keywords {
+  margin-left: 104px;
+  margin-top: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}
+
+.header__description {
+  width: 545px;
+  height: 48px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFF;
+  margin-top: 32px;
+}
+
+.header__search {
+  margin-top: 64px;
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header {
+    height: 400px;
+    background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+    background-size: cover;
+  }
+
+  .header__top-container {
+    height: 66px;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__top-container-saved-news {
+    height: 66px;
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 22px;
+    margin-left: 40px;
+  }
+
+  .header__menu {
+    margin-right: 40px;
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .header__button_main {
+    color: #FFF;
+    margin-top: 22px;
+    box-shadow: inset 0px -3px 0px rgba(255, 255, 255);
+  }
+
+  .header__button_main-saved-news {
+    margin-top: 22px;
+  }
+
+  .header__button_saved-news {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+
+  .header__button_about {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+
+  .header__button_authorization-container {
+    display: flex;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 176px;
+    margin-left: 16px;
+  }
+
+  .header__button_authorization-container-saved-news {
+    display: flex;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 112px;
+    margin-left: 16px;
+  }
+
+  .header__button_logout_icon{
+    height: 16px;
+    width: 17px;
+    margin: auto auto auto 10px;
+    background-image: url(../../images/union.svg);
+  }
+
+  .header__button_logout {
+    display: flex;
+    margin: auto;
+  }
+
+  .header__button_login {
+    margin: auto;
+  }
+
+  .header__bottom-container {
+    margin: auto;
+    width: 452px;
+  }
+
+  .header__title {
+    width: 385px;
+    height: 80px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 40px;
+    color: #FFF;
+    margin-top: 38px;
+  }
+
+  .header__subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+    width: 712px;
+    margin: 24px auto auto auto;
+  }
+
+  .header__subtitle-saved-news {
+      margin: 24px auto auto auto;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px;
+      color: rgba(26, 27, 34, 0.5);
+      width: 688px;
+    }
+
+  .header__keywords {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #1A1B22;
+    width: 688px;
+    margin: 16px auto auto auto;
+  }
+
+  .header__description {
+    width: 452px;
+    height: 48px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFF;
+    margin-top: 16px;
+  }
+
+  .header__search {
+    margin-top: 48px;
+    display: flex;
+  }
+
+  .header__title-saved-news {
+    margin: 16px auto auto auto;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: #1A1B22;
+    width: 688px;
+  }
+
+  .header__title-about {
+    margin: 30px auto auto auto;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: #1A1B22;
+    width: 688px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    height: 536px;
+    background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+    background-size: cover;
+    background-position-x: center;
+  }
+
+  .header__top-container {
+    height: 56px;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__top-container-saved-news {
+    height: 56px;
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+
+  .header__menu {
+    margin-right: 40px;
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    display: none;
+  }
+
+  .header__button_main {
+    margin-top: 22px;
+    box-shadow: inset 0px -3px 0px rgba(255, 255, 255);
+  }
+
+  .header__button_main-saved-news {
+    margin-top: 22px;
+  }
+
+  .header__button_saved-news {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+
+  .header__button_about {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+
+  .header__button_authorization-container {
+    display: flex;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 176px;
+    margin-left: 16px;
+  }
+
+  .header__button_authorization-container-saved-news {
+    display: flex;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 112px;
+    margin-left: 16px;
+  }
+
+  .header__button_logout_icon{
+    height: 16px;
+    width: 17px;
+    margin: auto auto auto 10px;
+    background-image: url(../../images/union.svg);
+  }
+
+  .header__button_logout {
+    display: flex;
+    margin: auto;
+  }
+
+  .header__button_login {
+    margin: auto;
+  }
+
+  .header__bottom-container {
+    margin: auto;
+    width: 288px;
+  }
+
+  .header__title {
+    width: 285px;
+    height: 80px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 40px;
+    color: #FFF;
+    margin-top: 30px;
+  }
+
+  .header__subtitle {
+    margin: 8px auto auto auto;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+    width: 288px;
+  }
+
+  .header__keywords {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    width: 288px;
+    margin: 16px auto auto auto;
+  }
+
+  .header__description {
+    width: 288px;
+    height: 72px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFF;
+    margin-top: 16px;
+  }
+
+  .header__search {
+    margin-top: 122px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__subtitle-saved-news {
+    margin: 8px auto auto auto;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+    width: 288px;
+  }
+
+  .header__title-saved-news {
+    margin: 16px auto auto auto;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: #1A1B22;
+    width: 288px;
+  }
+
+  .header__title-about {
+    margin: 16px auto auto auto;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: #1A1B22;
+    width: 288px;
+  }
+}
