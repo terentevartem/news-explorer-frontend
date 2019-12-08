@@ -58,6 +58,10 @@ button, h1, h2, h3, h4 {
   margin: 62px auto 62px;
 }
 
+.box-shadow {
+  border-bottom: 3px solid #000000;
+}
+
 @media (min-width: 768px) and (max-width: 1280px) {
   .title {
     font-size: 30px;
