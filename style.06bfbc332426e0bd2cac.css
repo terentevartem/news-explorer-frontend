@@ -2008,7 +2008,6 @@ template {
    top: -50px;
    right: -50px;
    cursor: pointer;
-   border: solid 1px #FFF;
  }
 
  @media (max-width: 430px) {
@@ -2019,7 +2018,6 @@ template {
     top: -42px;
     right: 16px;
     cursor: pointer;
-    border: solid 1px #FFF;
   }
 }
 .popup-auth__title {
