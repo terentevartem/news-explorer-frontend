@@ -1,32 +1,25 @@
+@import url(./__description/not-found__description.css);
+@import url(./__image/not-found__image.css);
+@import url(./__title/not-found__title.css);
+
 .not-found {
   background: #F5F6F7;
   display: flex;
 }
 
-.not-found__description {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  text-align: center;
-  color: #B6BCBF;
+.not-found-container {
+  margin: 80px auto 80px;
 }
 
-.not-found__title {
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 30px;
-  text-align: center;
-  color: #1A1B22;
-  margin-bottom: 16px;
+@media (min-width: 768px) and (max-width: 1280px) {
+  .not-found-container {
+    margin: 40px auto 40px;
+  }
 }
 
-.not-found__image {
-  width: 96px;
-  height: 96px;
-  background-image: url(../../images/not-found_v1.svg);
-  margin: auto;
+@media (max-width: 767px) {
+  .not-found-container {
+    margin: 32px auto 32px;
+  }
+
 }

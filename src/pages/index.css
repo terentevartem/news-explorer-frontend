@@ -3,20 +3,22 @@
 @import url(../blocks/about/about.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/header/header.css);
-@import url(../blocks/header-about/header-about.css);
-@import url(../blocks/header-saved-news/header-saved-news.css);
+@import url(../blocks/header-page-about/header-page-about.css);
+@import url(../blocks/header-page-saved-news/header-page-saved-news.css);
 @import url(../blocks/not-found/not-found.css);
 @import url(../blocks/preloader/preloader.css);
 @import url(../blocks/results/results.css);
 @import url(../blocks/technologies/technologies.css);
 @import url(../blocks/commits/commits.css);
-@import url(../blocks/search/search.css);
+@import url(../blocks/popup-auth/popup-auth.css);
+
+
 
 a {
   text-decoration: none;
 }
 
-button, h1, h2, h3, h4 {
+button, h1, h2, h3, h4, input {
   margin: 0;
 	padding: 0;
 	border: 0;
@@ -31,64 +33,4 @@ button, h1, h2, h3, h4 {
   margin: auto;
   display: flex;
   flex-direction: column;
-}
-
-.color-white {
-  color: #FFFFFF;
-}
-
-.color-black {
-  color: #1A1B22;
-}
-
-.title {
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 46px;
-  color: #1A1B22;
-}
-
-.container {
-  margin: 80px auto 80px;
-}
-
-.container-saved-news {
-  margin: 62px auto 62px;
-}
-
-.box-shadow {
-  border-bottom: 3px solid #000000;
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .container {
-    margin: 40px auto 40px;
-  }
-
-  .container-saved-news {
-    margin: 32px auto 22px;
-  }
-}
-
-@media (max-width: 767px) {
-  .title {
-    font-size: 30px;
-    line-height: 40px;
-    margin: auto;
-  }
-
-  .container {
-    margin: 32px auto 32px;
-  }
-
-  .container-saved-news {
-    margin: 32px auto 22px;
-  }
 }

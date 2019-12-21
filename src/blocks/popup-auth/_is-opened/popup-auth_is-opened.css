@@ -1,0 +1,8 @@
+.popup-login.popup_is-opened {
+  display: flex;
+}
+
+
+.popup-registration.popup_is-opened {
+  display: flex;
+}

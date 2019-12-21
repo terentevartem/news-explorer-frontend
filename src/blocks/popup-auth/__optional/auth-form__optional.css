@@ -1,0 +1,15 @@
+.auth-form__optional {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+  margin-top: 16px;
+}
+
+.auth-form__optional-link-registration, .auth-form__optional-link-login {
+  color: #2F71E5;
+  cursor: pointer;
+}

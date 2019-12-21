@@ -1,0 +1,39 @@
+@import url(./__content/popup-auth__content.css);
+@import url(./__close/popup-auth__button-close.css);
+@import url(./__title/popup-auth__title.css);
+@import url(./__form/popup-auth__auth-form.css);
+@import url(./__input/auth-form__input.css);
+@import url(./__button/auth-form__button.css);
+@import url(./_is-opened/popup-auth_is-opened.css);
+@import url(./__subtitle/auth-form__subtitle.css);
+@import url(./__optional/auth-form__optional.css);
+
+.popup-auth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+@media (max-width: 430px) {
+  .popup-auth {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: none;
+    border: solid 1px #000;
+  }
+}

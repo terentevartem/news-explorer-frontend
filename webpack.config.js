@@ -6,7 +6,10 @@ const webpack = require('webpack');
 const CreateFileWebpack = require('create-file-webpack')
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: './src/index.js',
+    about: './src/about.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
@@ -31,20 +34,20 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
         use: [
-                'file-loader?name=./images/[name].[ext]',
-                {
-                        loader: 'image-webpack-loader',
-                        options: {
-                          bypassOnDebug: true,
-                          disable: true,
-                        },
-                },
+          'file-loader?name=./images/[name].[ext]',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
         ],
       },
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ //
+    new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({

@@ -1,0 +1,17 @@
+.popup-auth__content {
+  width: 430px;
+  min-height: 380px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
+}
+
+@media (max-width: 430px) {
+  .popup-auth__content {
+    width: 100%;
+    min-height: 100%;
+    margin-top: 56px;
+  }
+}

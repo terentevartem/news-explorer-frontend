@@ -9,41 +9,62 @@
     <meta name="author" content="Артем Терентьев">
     <title>О проекте - NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
   </head>
   <body>
     <div class="page">
-      <header class="header-about">
-          <div class="header__top-container">
-            <a href="./index.html" class="header__logo color-black">
+      <header class="header-page-about">
+          <div class="menu">
+            <a href="./index.html" class="menu__logo menu__logo_black">
               NewsExplorer
             </a>
-            <div class="header__menu">
-              <a href="./index.html" class="header__button_main-saved-news header__button_black">
+            <div class="menu__buttons menu-button">
+              <a href="./index.html" class="menu-button__main menu-button_inactive">
                 Главная
               </a>
-              <a href="./about.html" class="header__button_about box-shadow">
+              <a href="./about.html" class="menu-button__about menu-button_selected menu-button_black">
                 О проекте
               </a>
-              <a href="./saved-news.html" class="header__button_saved-news header__button_black">
+              <a href="./saved-news.html" class="menu-button__saved-news menu-button_inactive">
                 Сохраненные статьи
               </a>
-              <div class="header__button_authorization-container-saved-news color-black">
-                  <div class="header__button_logout">
-                  <div class="header__button_login color-black">
-                    Грета
-                  </div>
-                  <div class="header__button_logout_icon">
+              <div class="menu-button__authorization">
+                Грета
+                <div class="menu-button__authorization_logout-icon">
+                </div>
+              </div>
+            </div>
+            <div class="menu__mobile-button menu__mobile-button_black">
+            </div>
+            <div class="menu__mobile mobile-popup">
+              <div class="mobile-popup__content">
+                <div class="mobile-popup__header">
+                  <a href="./index.html" class="menu__logo menu__logo_white">
+                    NewsExplorer
+                  </a>
+                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close">
+                </div>
+                <div class="mobile-popup__buttons">
+                  <a href="./index.html" class="mobile-popup__button">
+                    Главная
+                  </a>
+                  <a href="./about.html" class="mobile-popup__button">
+                    О проекте
+                  </a>
+                  <a href="./saved-news.html" class="mobile-popup__button">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth">
+                    Авторизоваться
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="header__title-about">
+          <div class="header-page-about__title">
               Клиентам
           </div>
-          <div class="header-about__description">
+          <div class="header-page-about__description">
               Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.
               <br><br>
               Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.
@@ -57,45 +78,45 @@
       </header>
       <div class="technologies">
         <div class="technologies-container">
-          <div class="title">
+          <div class="technologies__title">
             Используемые<br>технологии
           </div>
           <div class="technologies__items">
-            <div class="technologies__items_item">
-              <div class="technologies__tilte">
+            <div class="technologies-item">
+              <div class="technologies-item__title">
                 HTML
               </div>
-              <div class="technologies__logo_html">
+              <div class="technologies-item__logo_html">
               </div>
             </div>
-            <div class="technologies__items_item">
-              <div class="technologies__tilte">
+            <div class="technologies-item">
+              <div class="technologies-item__title">
                 CSS
               </div>
-              <div class="technologies__logo_css">
+              <div class="technologies-item__logo_css">
               </div>
             </div>
-            <div class="technologies__items_item">
-              <div class="technologies__tilte">
+            <div class="technologies-item">
+              <div class="technologies-item__title">
                 Java Script
               </div>
-              <div class="technologies__logo_js">
+              <div class="technologies-item__logo_js">
               </div>
             </div>
-            <div class="technologies__items_item">
-              <div class="technologies__tilte">
+            <div class="technologies-item">
+              <div class="technologies-item__title">
                 Webpack
               </div>
-              <div class="technologies__logo_webpack">
+              <div class="technologies-item__logo_webpack">
               </div>
             </div>
           </div>
         </div>
       </div>
       <section class="about">
-        <img class="about__avatar" src="/images/image-03.png" alt="Фотография автора">
-        <div class="about__container">
-          <h3 class="title">
+        <img class="about__avatar" src="./images/image-03.png" alt="Фотография автора">
+        <div class="about-container">
+          <h3 class="about__title">
             Об авторе
           </h3>
           <p class="about__description">
@@ -106,36 +127,137 @@
         </div>
       </section>
       <div class="commits">
-        <div class="container">
-          <div class="title">
+          <div class="commits__title">
             История коммитов из GitHub
           </div>
-        </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
       </div>
-      <div class="footer">
-        <div class="footer__copyright">
+      <footer class="footer">
+        <p class="footer__copyright">
           © 2019 news-explorer.ga
-        </div>
-        <div class="footer__menu">
-          <a href="./index.html" class="footer__button">
+        </p>
+        <nav class="footer__menu">
+          <a href="./index.html" class="footer-button">
             Главная
           </a>
-          <a href="./about.html" class="footer__button">
+          <a href="./about.html" class="footer-button">
             О проекте
           </a>
-          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__button">
+          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer-button">
             Яндекс.Практикум
           </a>
-        </div>
-        <div class="footer__icon">
+        </nav>
+        <p class="footer__icon">
           <a href="https://github.com/terentevartem" target="_blank" class="footer__icon_github">
           </a>
           <a href="https://www.facebook.com" target="_blank" class="footer__icon_fb">
           </a>
+        </p>
+      </footer>
+
+      <div class="popup-auth popup-login">
+        <div class="popup-auth__content">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <h3 class="popup-auth__title">Вход</h3>
+          <form class="popup-auth__auth-form auth-form" name="login">
+              <div class="auth-form__subtitle">Email</div>
+              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <div class="auth-form__subtitle">Пароль</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <button disabled class="auth-form__button">Войти</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
+          </form>
         </div>
       </div>
+
+      <div class="popup-auth popup-registration">
+        <div class="popup-auth__content">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <h3 class="popup-auth__title">Регистрация</h3>
+          <form class="popup-auth__auth-form auth-form" name="login">
+              <div class="auth-form__subtitle">Email</div>
+              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <div class="auth-form__subtitle">Пароль</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <div class="auth-form__subtitle">Имя</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
+              <button disabled class="auth-form__button">Зарегистрироваться</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+          </form>
+        </div>
+      </div>
+
     </div>
-    <!-- <script src="./index.js"></script> -->
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
   </body>
 </html>

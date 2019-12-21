@@ -13,3 +13,8 @@
   font-family: 'Roboto Slab';
   src: url("./fonts/robotoslab-regular-webfont.woff") format("woff");
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url("./fonts/inter-regular.woff") format("woff");
+}

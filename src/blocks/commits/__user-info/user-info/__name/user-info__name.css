@@ -1,0 +1,12 @@
+.user-info__name {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  margin-left: 16px;
+  justify-content: center;
+}

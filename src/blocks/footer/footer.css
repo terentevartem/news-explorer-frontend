@@ -1,27 +1,14 @@
+@import url(./__copyright/footer__copyright.css);
+@import url(./__icon/footer__icon.css);
+@import url(./__menu/footer__menu.css);
+
 .footer {
   height: 80px;
   display: flex;
   justify-content: space-between;
 }
 
-.footer__copyright {
-  margin: auto 104px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: #B6BCBF;
-}
-
-.footer__menu {
-  margin: auto 0;
-  width: 401px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__button {
+.footer-button {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -30,42 +17,9 @@
   color: #1A1B22;
 }
 
-.footer__icon {
-  margin: auto 104px;
-  width: 68px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__icon_github {
-  margin: -1px 0 0 -1px;
-  width: 21.5px;
-  height: 21px;
-  background-image: url(../../images/github.svg);
-}
-
-.footer__icon_fb {
-  width: 20px;
-  height: 20px;
-  background-image: url(../../images/fb.svg);
-}
-
 @media (min-width: 768px) and (max-width: 1280px) {
   .footer {
     height: 64px;
-  }
-
-  .footer__copyright {
-    margin: auto 40px;
-    width: 190px;
-  }
-
-  .footer__menu {
-    width: 384px;
-  }
-
-  .footer__icon {
-    margin: auto 42px;
   }
 }
 
@@ -78,29 +32,7 @@
     margin: auto;
   }
 
-  .footer__copyright {
-    margin-top: 180px;
-    width: 200px;
-    position: absolute;
-    margin-left: 16px;
-  }
-
-  .footer__menu {
-    width: 200px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 16px;
-    margin-top: 20px;
-  }
-
-  .footer__icon {
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 232px;
-  }
-
-  .footer__button {
+  .footer-button {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

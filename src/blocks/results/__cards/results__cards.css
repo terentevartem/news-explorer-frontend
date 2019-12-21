@@ -1,210 +1,39 @@
-.cards__contents {
-  margin: 24px 24px 24px 24px;
-  display: flex;
-  flex-direction: column;
-}
+@import url(./cards-item/cards-item.css);
 
-.cards__save-button {
-  margin-left: auto;
-  height: 40px;
-  width: 40px;
-  background: #FFFFFF;
-  border-radius: 8px;
-  display: flex;
-}
-
-.cards__save-button_icon {
-  height: 19px;
-  width: 14px;
-  background-image: url(../../../images/save_icon.svg);
-  margin: auto;
-  box-sizing: border-box;
-}
-
-.cards__date {
-  margin-top: 228px;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: #B6BCBF;
-}
-
-.cards__title {
-  margin-top: 12px;
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 30px;
-  color: #1A1B22;
-}
-
-.cards__description {
-  margin-top: 16px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1A1B22;
-}
-
-.cards__author {
-  margin-top: 18px;
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: #B6BCBF;
+.results__cards {
+  padding: 64px 0px 64px 0px;
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	-webkit-column-gap: 16px;
+	row-gap: 16px;
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {
-  .cards__contents {
-    margin: 8px 8px 8px 8px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cards__save-button {
-    margin-left: auto;
-    height: 40px;
-    width: 40px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    display: flex;
-  }
-
-  .cards__save-button_icon {
-    height: 19px;
-    width: 14px;
-    background-image: url(../../../images/save_icon.svg);
-    margin: auto;
-    box-sizing: border-box;
-  }
-
-  .cards__date {
-    margin-top: 118px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    color: #B6BCBF;
-  }
-
-  .cards__title {
-    margin-top: 12px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 24px;
-    color: #1A1B22;
-  }
-
-  .cards__description {
-    margin-top: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #1A1B22;
-    height: 88px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-  }
-
-  .cards__author {
-    margin-top: 12px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    color: #B6BCBF;
+  .results__cards {
+    padding: 32px 0px 22px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    -webkit-column-gap: 8px;
+    row-gap: 8px;
   }
 }
 
 @media (max-width: 767px) {
-  .cards__contents {
-    margin: 8px 8px 8px 8px;
-    display: flex;
-    flex-direction: column;
+  .results__cards {
+    padding: 24px 0px 32px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
   }
+}
 
-  .cards__save-button {
-    margin-left: auto;
-    height: 40px;
-    width: 40px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    display: flex;
-  }
-
-  .cards__save-button_icon {
-    height: 19px;
-    width: 14px;
-    background-image: url(../../../images/save_icon.svg);
-    margin: auto;
-    box-sizing: border-box;
-  }
-
-  .cards__date {
-    margin-top: 156px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    color: #B6BCBF;
-  }
-
-  .cards__title {
-    margin-top: 12px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 24px;
-    color: #1A1B22;
-  }
-
-  .cards__description {
-    margin-top: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #1A1B22;
-    height: 88px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-  }
-
-  .cards__author {
-    margin-top: 12px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    color: #B6BCBF;
+@media (max-width: 600px) {
+  .results__cards {
+    padding: 24px 0px 32px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
   }
 }
