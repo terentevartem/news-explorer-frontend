@@ -9,8 +9,7 @@
     <meta name="author" content="Артем Терентьев">
     <title>О проекте - NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
-    <link rel="stylesheet" href="style.06bfbc332426e0bd2cac.css">
+    <link rel="stylesheet" href="style.c14efd73f450b385ba84.css">
   </head>
   <body>
     <div class="page">
@@ -19,7 +18,7 @@
             <a href="./index.html" class="menu__logo menu__logo_black">
               NewsExplorer
             </a>
-            <div class="menu__buttons">
+            <div class="menu__buttons menu-button">
               <a href="./index.html" class="menu-button__main menu-button_inactive">
                 Главная
               </a>
@@ -32,6 +31,32 @@
               <div class="menu-button__authorization">
                 Грета
                 <div class="menu-button__authorization_logout-icon">
+                </div>
+              </div>
+            </div>
+            <div class="menu__mobile-button menu__mobile-button_black">
+            </div>
+            <div class="menu__mobile mobile-popup">
+              <div class="mobile-popup__content">
+                <div class="mobile-popup__header">
+                  <a href="./index.html" class="menu__logo menu__logo_white">
+                    NewsExplorer
+                  </a>
+                  <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close">
+                </div>
+                <div class="mobile-popup__buttons">
+                  <a href="./index.html" class="mobile-popup__button">
+                    Главная
+                  </a>
+                  <a href="./about.html" class="mobile-popup__button">
+                    О проекте
+                  </a>
+                  <a href="./saved-news.html" class="mobile-popup__button">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth">
+                    Авторизоваться
+                  </div>
                 </div>
               </div>
             </div>
@@ -102,11 +127,80 @@
         </div>
       </section>
       <div class="commits">
-        <div class="commits-container">
           <div class="commits__title">
             История коммитов из GitHub
           </div>
-        </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commit-container commit">
+                  <div class="commit__date">14 августа, 2019</div>
+                  <div class="commit__user-info user-info">
+                    <div class="user-info__avatar">
+                    </div>
+                    <div class="user-info__name">
+                      Антон Долинин
+                      <div class="user-info__mail">
+                        anton@yandex.ru
+                      </div>
+                    </div>
+                  </div>
+                  <div class="commit__text">
+                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
       </div>
       <footer class="footer">
         <p class="footer__copyright">
@@ -130,8 +224,40 @@
           </a>
         </p>
       </footer>
+
+      <div class="popup-auth popup-login">
+        <div class="popup-auth__content">
+          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close">
+          <h3 class="popup-auth__title">Вход</h3>
+          <form class="popup-auth__auth-form auth-form" name="login">
+              <div class="auth-form__subtitle">Email</div>
+              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <div class="auth-form__subtitle">Пароль</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <button disabled class="auth-form__button">Войти</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-registration" id="id">Зарегистрироваться</span></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup-auth popup-registration">
+        <div class="popup-auth__content">
+          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close">
+          <h3 class="popup-auth__title">Регистрация</h3>
+          <form class="popup-auth__auth-form auth-form" name="login">
+              <div class="auth-form__subtitle">Email</div>
+              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <div class="auth-form__subtitle">Пароль</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <div class="auth-form__subtitle">Имя</div>
+              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
+              <button disabled class="auth-form__button">Зарегистрироваться</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-login" id="id">Войти</span></div>
+          </form>
+        </div>
+      </div>
+
     </div>
-    <!-- <script src="./index.js"></script> -->
-    <script src="main.c9cdfb74b07a8850adbb.js"></script>
+    <script src="about.83c8bca1a5ad16e5cf99.js"></script>
   </body>
 </html>
