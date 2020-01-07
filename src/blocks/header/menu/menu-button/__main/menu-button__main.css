@@ -1,7 +1,7 @@
 @import url(./_inactive/menu-button__main_inactive.css);
+@import url(./_white/menu-button__main_white.css);
 
 .menu-button__main {
-  color: #FFF;
   margin-top: 30px;
   border-bottom: 3px solid #ffffff;
 }
