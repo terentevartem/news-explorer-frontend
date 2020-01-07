@@ -1,0 +1,16 @@
+@import url(./_white/menu-button__authorization_white.css);
+@import url(./_logout-icon/menu-button__authorization_logout-icon.css);
+
+.menu-button__authorization {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 13px;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 178px;
+  margin-left: 32px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

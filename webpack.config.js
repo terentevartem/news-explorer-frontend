@@ -25,7 +25,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use:  [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '../', }
+          },
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: __dirname + '/postcss.config.js'
+              }
+            },
+          },
+        ],
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -48,7 +65,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: 'css/style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       inject: false,

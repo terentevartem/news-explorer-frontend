@@ -1,0 +1,7 @@
+@import url(./__name/user-info__name.css);
+@import url(./__mail/user-info__mail.css);
+@import url(./__avatar/user-info__avatar.css);
+
+.commit__user-info {
+  display: flex;
+}

@@ -1,4 +1,5 @@
 @import url(./__description/header-page-about__description.css);
+@import url(./__title/header-page-about__title.css);
 
 .header-page-about {
   height: 808px;

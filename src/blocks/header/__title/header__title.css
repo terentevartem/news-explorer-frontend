@@ -1,9 +1,3 @@
-.header__title-container {
-  margin: auto;
-  width: 608px;
-  height: 336px;
-}
-
 .header__title {
   width: 608px;
   height: 128px;
@@ -17,11 +11,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {
-  .header__title-container {
-    margin: auto;
-    width: 452px;
-  }
-
   .header__title {
     width: 385px;
     height: 80px;
@@ -36,11 +25,6 @@
 }
 
 @media (max-width: 767px) {
-  .header__title-container {
-    margin: auto;
-    width: 288px;
-  }
-
   .header__title {
     width: 285px;
     height: 80px;

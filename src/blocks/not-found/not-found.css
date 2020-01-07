@@ -1,25 +1,9 @@
 @import url(./__description/not-found__description.css);
 @import url(./__image/not-found__image.css);
 @import url(./__title/not-found__title.css);
+@import url(./not-found-container/not-found-container.css);
 
 .not-found {
   background: #F5F6F7;
   display: flex;
-}
-
-.not-found-container {
-  margin: 80px auto 80px;
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .not-found-container {
-    margin: 40px auto 40px;
-  }
-}
-
-@media (max-width: 767px) {
-  .not-found-container {
-    margin: 32px auto 32px;
-  }
-
 }

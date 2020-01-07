@@ -1,18 +1,9 @@
+@import url(./__title/technologies-item__title.css);
+
 .technologies-item {
   width: 120px;
   height: 153px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.technologies-item__title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: 0.2px;
-  color: #1A1B22;
 }

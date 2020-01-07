@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .mobile-popup__content {
+    width: 100%;
+    background: #1A1B22;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    position: relative;
+    box-sizing: border-box;
+  }
+}

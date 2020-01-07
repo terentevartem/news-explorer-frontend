@@ -1,40 +1,10 @@
 @import url(./__cards/results__cards.css);
 @import url(./__title/results__title.css);
 @import url(./__button/results__button.css);
+@import url(./results-container/results-container.css);
+@import url(./results-container_page-saved-news/results-container_page-saved-news.css);
 
 .results {
   background: #F5F6F7;
   display: flex;
-}
-
-.results-container {
-  margin: 80px auto 80px;
-}
-
-.results-container_page-saved-news {
-  margin: 0px auto 0px;
-}
-
-.results__button:hover {
-  background: #e8e8e9;
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .results-container_page-saved-news {
-    margin: 0px auto 0px;
-  }
-
-  .results-container {
-    margin: 40px auto 40px;
-  }
-}
-
-@media (max-width: 767px) {
-  .results-container {
-    margin: 32px auto 32px;
-  }
-
-  .results-container_page-saved-news {
-    margin: 0px auto 0px;
-  }
 }

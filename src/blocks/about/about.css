@@ -1,6 +1,7 @@
 @import url(./__avatar/about__avatar.css);
 @import url(./__title/about__title.css);
 @import url(./__description/about__description.css);
+@import url(./about-container/about-container.css);
 
 .about{
   height: 624px;
@@ -8,23 +9,10 @@
   display: flex;
 }
 
-.about-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 56px;
-  margin-top: 131px;
-}
-
 @media (min-width: 768px) and (max-width: 1280px) {
   .about{
     height: 354px;
     justify-content: center;
-  }
-
-  .about-container {
-    margin-left: 32px;
-    margin-top: 40px;
-    margin-right: 40px;
   }
 }
 
@@ -33,9 +21,5 @@
     height: 752px;
     display: flex;
     flex-direction: column;
-  }
-
-  .about-container {
-    margin: 24px auto 0 auto;
   }
 }

@@ -1,3 +1,7 @@
+@import url(./__subtitle/header-page-saved-news__subtitle.css);
+@import url(./__title/header-page-saved-news__title.css);
+@import url(./__keywords/header-page-saved-news__keywords.css);
+
 .header-page-saved-news {
   height: 374px;
 }

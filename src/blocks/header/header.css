@@ -1,5 +1,6 @@
 @import url(./__subtitle/header__subtitle.css);
 @import url(./__title/header__title.css);
+@import url(./__title-container/header__title-container.css);
 @import url(./__description/header__description.css);
 @import url(./__search/header__search.css);
 @import url(./menu/menu.css);
@@ -9,105 +10,11 @@
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
 }
 
-.header-page-saved-news__subtitle {
-    margin-left: 104px;
-    margin-top: 40px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    color: rgba(26, 27, 34, 0.5);
-  }
-
-.header-page-saved-news__title {
-  margin-left: 104px;
-  margin-top: 28px;
-  width: 712px;
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 46px;
-  color: #1A1B22;
-}
-
-.header-page-about__title {
-    margin-left: 104px;
-    margin-top: 80px;
-    width: 712px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 46px;
-    color: #1A1B22;
-  }
-
-.header-page-saved-news__keywords {
-  margin-left: 104px;
-  margin-top: 30px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: #1A1B22;
-}
-
 @media (min-width: 768px) and (max-width: 1280px) {
   .header {
     height: 400px;
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
     background-size: cover;
-  }
-
-  .header__button_login {
-    margin: auto;
-  }
-
-  .header-page-saved-news__subtitle {
-      margin: 24px auto auto auto;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 24px;
-      color: rgba(26, 27, 34, 0.5);
-      width: 688px;
-    }
-
-  .header-page-saved-news__keywords {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: #1A1B22;
-    width: 688px;
-    margin: 16px auto auto auto;
-  }
-
-  .header-page-saved-news__title {
-    margin: 16px auto auto auto;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 34px;
-    color: #1A1B22;
-    width: 688px;
-  }
-
-  .header-page-about__title {
-    margin: 30px auto auto auto;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 34px;
-    color: #1A1B22;
-    width: 688px;
   }
 }
 
@@ -117,53 +24,5 @@
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
     background-size: cover;
     background-position-x: center;
-  }
-
-  .header__button_login {
-    margin: auto;
-  }
-
-  .header-page-saved-news__keywords {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    color: #1A1B22;
-    width: 288px;
-    margin: 16px auto auto auto;
-  }
-
-  .header-page-saved-news__subtitle {
-    margin: 8px auto auto auto;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(26, 27, 34, 0.5);
-    width: 288px;
-  }
-
-  .header-page-saved-news__title {
-    margin: 16px auto auto auto;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 34px;
-    color: #1A1B22;
-    width: 288px;
-  }
-
-  .header-page-about__title {
-    margin: 16px auto auto auto;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 34px;
-    color: #1A1B22;
-    width: 288px;
   }
 }

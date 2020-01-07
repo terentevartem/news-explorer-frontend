@@ -1,0 +1,23 @@
+.swiper-button-prev  {
+  width: 40px !important;
+  height: 40px !important;
+  background-image: url(../../../../images/slider-control-left.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  margin: 0;
+  color: rgba(1, 1, 1, 0) !important;
+  transform: translate(30px, 15px);
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .swiper-button-prev  {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper-button-prev  {
+    display: none !important;
+  }
+}
