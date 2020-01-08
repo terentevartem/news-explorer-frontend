@@ -1,23 +1,2 @@
 @import url(./_fb/footer__icon_fb.css);
 @import url(./_github/footer__icon_github.css);
-
-.footer__icon {
-  margin: auto 104px;
-  width: 68px;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .footer__icon {
-    margin: auto 42px;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer__icon {
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 232px;
-  }
-}

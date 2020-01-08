@@ -8,8 +8,3 @@
   color: #000000;
   margin-top: 16px;
 }
-
-.auth-form__optional-link-registration, .auth-form__optional-link-login {
-  color: #2F71E5;
-  cursor: pointer;
-}

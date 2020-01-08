@@ -2,3 +2,5 @@
 @import url(./__input/auth-form__input.css);
 @import url(./__optional/auth-form__optional.css);
 @import url(./__subtitle/auth-form__subtitle.css);
+@import url(./__optional-link-login/auth-form__optional-link-login.css);
+@import url(./__optional-link-registration/auth-form__optional-link-registration.css);
