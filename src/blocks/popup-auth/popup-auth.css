@@ -2,7 +2,8 @@
 @import url(./__button-close/popup-auth__button-close.css);
 @import url(./__title/popup-auth__title.css);
 @import url(./__auth-form/popup-auth__auth-form.css);
-@import url(./_is-opened/popup-auth_is-opened.css);
+@import url(./popup-login/popup-login.css);
+@import url(./popup-registration/popup-registration.css);
 @import url(./auth-form/__subtitle/auth-form__subtitle.css);
 
 .popup-auth {
