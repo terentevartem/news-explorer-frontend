@@ -5,4 +5,5 @@
 .preloader {
   background: #F5F6F7;
   display: flex;
+  z-index: -1;
 }

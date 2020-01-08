@@ -40,7 +40,7 @@
 @media (max-width: 767px) {
   .search__button {
     display: flex;
-    position: relative;
+    position: static;
     width: 288px;
     height: 56px;
     background: #2F71E5;
