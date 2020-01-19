@@ -1,7 +1,7 @@
 @import url(./__avatar/about__avatar.css);
 @import url(./__title/about__title.css);
 @import url(./__description/about__description.css);
-@import url(./about-container/about-container.css);
+@import url(./__container/about__container.css);
 
 .about{
   height: 624px;

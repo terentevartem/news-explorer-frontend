@@ -60,26 +60,26 @@
             <h3 class="header__description">
               Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
             </h3>
-            <form class="header__search search">
-              <div class="search__input">
+            <form class="header__search">
+              <div class="header__search-input">
                   Природа
               </div>
-              <button class="search__button" type="submit">
+              <button class="header__search-button" type="submit">
                 Искать
               </button>
             </form>
           </div>
       </header>
       <div class="results">
-        <div class="results-container">
+        <div class="results__container">
           <h3 class="results__title">
             Результаты поиска
           </h3>
           <div class="results__cards">
             <div class="cards-item">
-              <div class="cards-item-container">
-                <div class="cards-item__save-button save-button">
-                  <div class="save-button__icon">
+              <div class="cards-item__container">
+                <div class="cards-item__save-button">
+                  <div class="cards-item__save-icon">
                   </div>
                 </div>
                 <div class="cards-item__date">
@@ -97,9 +97,9 @@
               </div>
             </div>
             <div class="cards-item">
-              <div class="cards-item-container">
-                <div class="cards-item__save-button save-button">
-                  <div class="save-button__icon">
+              <div class="cards-item__container">
+                <div class="cards-item__save-button">
+                  <div class="cards-item__save-icon">
                   </div>
                 </div>
                 <div class="cards-item__date">
@@ -117,9 +117,9 @@
               </div>
             </div>
             <div class="cards-item">
-              <div class="cards-item-container">
-                <div class="cards-item__save-button save-button">
-                  <div class="save-button__icon">
+              <div class="cards-item__container">
+                <div class="cards-item__save-button">
+                  <div class="cards-item__save-icon">
                   </div>
                 </div>
                 <div class="cards-item__date">
@@ -137,9 +137,9 @@
               </div>
             </div>
             <div class="cards-item">
-              <div class="cards-item-container">
-                <div class="cards-item__save-button save-button">
-                  <div class="save-button__icon">
+              <div class="cards-item__container">
+                <div class="cards-item__save-button">
+                  <div class="cards-item__save-icon">
                   </div>
                 </div>
                 <div class="cards-item__date">
@@ -157,9 +157,9 @@
               </div>
             </div>
             <div class="cards-item">
-              <div class="cards-item-container">
-                <div class="cards-item__save-button save-button">
-                  <div class="save-button__icon">
+              <div class="cards-item__container">
+                <div class="cards-item__save-button">
+                  <div class="cards-item__save-icon">
                   </div>
                 </div>
                 <div class="cards-item__date">
@@ -183,15 +183,15 @@
         </div>
       </div>
       <section class="preloader">
-        <div class="preloader-container">
-            <i class="preloader-circle"></i>
+        <div class="preloader__container">
+            <i class="preloader__circle"></i>
             <h5 class="preloader__text">
               Идет поиск новостей...
             </h5>
         </div>
       </section>
       <section class="not-found">
-        <div class="not-found-container">
+        <div class="not-found__container">
           <div class="not-found__image">
           </div>
           <h4 class="not-found__title">
@@ -204,7 +204,7 @@
       </section>
       <section class="about">
           <img class="about__avatar" src="<%= require('./images/image-03.png').default%>" alt="Фотография автора">
-          <div class="about-container">
+          <div class="about__container">
             <h3 class="about__title">
               Об авторе
             </h3>
@@ -220,13 +220,13 @@
           © 2019 news-explorer.ga
         </p>
         <nav class="footer__menu">
-          <a href="./index.html" class="footer-button">
+          <a href="./index.html" class="footer__button">
             Главная
           </a>
-          <a href="./about.html" class="footer-button">
+          <a href="./about.html" class="footer__button">
             О проекте
           </a>
-          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer-button">
+          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__button">
             Яндекс.Практикум
           </a>
         </nav>

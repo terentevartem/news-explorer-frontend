@@ -3,7 +3,8 @@
 @import url(./__title-container/header__title-container.css);
 @import url(./__description/header__description.css);
 @import url(./__search/header__search.css);
-@import url(./menu/menu.css);
+@import url(./__search-button/search__button.css);
+@import url(./__search-input/search__input.css);
 
 .header {
   height: 576px;

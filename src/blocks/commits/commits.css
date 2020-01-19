@@ -1,7 +1,5 @@
 @import url(./__title/commits__title.css);
-@import url(./swiper/swiper.css);
-@import url(./commits-container/commits-container.css);
-@import url(./commit/commit.css);
+@import url(./__container/commits__container.css);
 
 .commits {
   position: relative;

@@ -77,7 +77,7 @@
           </div>
       </header>
       <div class="technologies">
-        <div class="technologies-container">
+        <div class="technologies__container">
           <div class="technologies__title">
             Используемые<br>технологии
           </div>
@@ -115,7 +115,7 @@
       </div>
       <section class="about">
         <img class="about__avatar" src="./images/image-03.png" alt="Фотография автора">
-        <div class="about-container">
+        <div class="about__container">
           <h3 class="about__title">
             Об авторе
           </h3>
@@ -130,90 +130,92 @@
           <div class="commits__title">
             История коммитов из GitHub
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="commits-container commit">
-                  <div class="commit__date">14 августа, 2019</div>
-                  <div class="commit__user-info user-info">
-                    <div class="user-info__avatar">
-                    </div>
-                    <div class="user-info__name">
-                      Антон Долинин
-                      <div class="user-info__mail">
-                        anton@yandex.ru
+          <div class="swiper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper__container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="commits__container commit">
+                    <div class="commit__date">14 августа, 2019</div>
+                    <div class="commit__user-info">
+                      <div class="commit__user-info-avatar">
+                      </div>
+                      <div class="commit__user-info-name">
+                        Антон Долинин
+                        <div class="commit__user-info-mail">
+                          anton@yandex.ru
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="commit__text">
-                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    <div class="commit__text">
+                      Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="commits-container commit">
-                  <div class="commit__date">14 августа, 2019</div>
-                  <div class="commit__user-info user-info">
-                    <div class="user-info__avatar">
-                    </div>
-                    <div class="user-info__name">
-                      Антон Долинин
-                      <div class="user-info__mail">
-                        anton@yandex.ru
+                <div class="swiper-slide">
+                  <div class="commits__container commit">
+                    <div class="commit__date">14 августа, 2019</div>
+                    <div class="commit__user-info">
+                      <div class="commit__user-info-avatar">
+                      </div>
+                      <div class="commit__user-info-name">
+                        Антон Долинин
+                        <div class="commit__user-info-mail">
+                          anton@yandex.ru
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="commit__text">
-                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    <div class="commit__text">
+                      Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="commits-container commit">
-                  <div class="commit__date">14 августа, 2019</div>
-                  <div class="commit__user-info user-info">
-                    <div class="user-info__avatar">
-                    </div>
-                    <div class="user-info__name">
-                      Антон Долинин
-                      <div class="user-info__mail">
-                        anton@yandex.ru
+                <div class="swiper-slide">
+                  <div class="commits__container commit">
+                    <div class="commit__date">14 августа, 2019</div>
+                    <div class="commit__user-info">
+                      <div class="commit__user-info-avatar">
+                      </div>
+                      <div class="commit__user-info-name">
+                        Антон Долинин
+                        <div class="commit__user-info-mail">
+                          anton@yandex.ru
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="commit__text">
-                    Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    <div class="commit__text">
+                      Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                    </div>
                   </div>
                 </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div>
               </div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              <div class="swiper-slide">Slide 4</div>
-              <div class="swiper-slide">Slide 5</div>
-              <div class="swiper-slide">Slide 6</div>
-              <div class="swiper-slide">Slide 7</div>
-              <div class="swiper-slide">Slide 8</div>
-              <div class="swiper-slide">Slide 9</div>
-              <div class="swiper-slide">Slide 10</div>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
       </div>
       <footer class="footer">
         <p class="footer__copyright">
           © 2019 news-explorer.ga
         </p>
         <nav class="footer__menu">
-          <a href="./index.html" class="footer-button">
+          <a href="./index.html" class="footer__button">
             Главная
           </a>
-          <a href="./about.html" class="footer-button">
+          <a href="./about.html" class="footer__button">
             О проекте
           </a>
-          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer-button">
+          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__button">
             Яндекс.Практикум
           </a>
         </nav>

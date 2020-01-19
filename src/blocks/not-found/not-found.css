@@ -1,7 +1,7 @@
 @import url(./__description/not-found__description.css);
 @import url(./__image/not-found__image.css);
 @import url(./__title/not-found__title.css);
-@import url(./not-found-container/not-found-container.css);
+@import url(./__container/not-found__container.css);
 
 .not-found {
   background: #F5F6F7;

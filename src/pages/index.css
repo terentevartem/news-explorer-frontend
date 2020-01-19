@@ -11,8 +11,16 @@
 @import url(../blocks/technologies/technologies.css);
 @import url(../blocks/commits/commits.css);
 @import url(../blocks/popup-auth/popup-auth.css);
-
-
+@import url(../blocks/cards-item/cards-item.css);
+@import url(../blocks/auth-form/auth-form.css);
+@import url(../blocks/popup-login/popup-login.css);
+@import url(../blocks/popup-registration/popup-registration.css);
+@import url(../blocks/swiper/swiper.css);
+@import url(../blocks/commit/commit.css);
+@import url(../blocks/menu/menu.css);
+@import url(../blocks/menu-button/menu-button.css);
+@import url(../blocks/mobile-popup/mobile-popup.css);
+@import url(../blocks/technologies-item/technologies-item.css);
 
 a {
   text-decoration: none;

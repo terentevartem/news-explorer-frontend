@@ -29,7 +29,7 @@ menuMobileButtonClose.addEventListener('click', function () {
   popupMenuMobile.close();
 });
 
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper__container', {
   updateOnWindowResize: true,
   slidesPerView: 3,
   spaceBetween: 10,

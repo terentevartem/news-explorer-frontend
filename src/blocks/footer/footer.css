@@ -2,7 +2,7 @@
 @import url(./__icons/footer__icons.css);
 @import url(./__icon/footer__icon.css);
 @import url(./__menu/footer__menu.css);
-@import url(./footer-button/footer-button.css);
+@import url(./__button/footer__button.css);
 
 .footer {
   height: 80px;
