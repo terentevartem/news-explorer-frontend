@@ -1,0 +1,7 @@
+.commit__user-info-avatar {
+  height: 64px;
+  width: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  background-image: url(../../../images/image-01.png);
+}

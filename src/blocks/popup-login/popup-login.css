@@ -1,0 +1,4 @@
+.popup-login.popup_is-opened {
+  display: flex;
+  z-index: 5;
+}

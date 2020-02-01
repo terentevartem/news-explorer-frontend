@@ -1,0 +1,29 @@
+@import url(./__logo/menu__logo.css);
+@import url(./__buttons/menu__buttons.css);
+@import url(./__mobile/menu__mobile.css);
+@import url(./__mobile-button/menu__mobile-button.css);
+
+.menu {
+  height: 80px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .menu {
+    height: 66px;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    height: 56px;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+}

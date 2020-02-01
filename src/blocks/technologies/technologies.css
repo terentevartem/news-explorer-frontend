@@ -1,0 +1,9 @@
+@import url(./__tilte/technologies__tilte.css);
+@import url(./__items/technologies__items.css);
+@import url(./__logo/technologies-item__logo.css);
+@import url(./__container/technologies__container.css);
+
+.technologies {
+  background: #F5F6F7;
+  display: flex;
+}

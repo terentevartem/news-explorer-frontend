@@ -1,0 +1,7 @@
+.menu-button__saved-news_inactive {
+  color: #B6BCBF;
+}
+
+.menu-button__saved-news_inactive:hover {
+  color: #000;
+}

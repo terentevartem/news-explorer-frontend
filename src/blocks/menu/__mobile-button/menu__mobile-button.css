@@ -1,0 +1,16 @@
+@import url(./_black/menu__mobile-button_black.css);
+@import url(./_white/menu__mobile-button_white.css);
+
+.menu__mobile-button {
+  position: absolute;
+}
+
+@media (max-width: 767px) {
+  .menu__mobile-button {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    margin: auto 16px;
+  }
+}

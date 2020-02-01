@@ -1,0 +1,19 @@
+.header__title-container {
+  margin: auto;
+  width: 608px;
+  height: 336px;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header__title-container {
+    margin: auto;
+    width: 452px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__title-container {
+    margin: auto;
+    width: 288px;
+  }
+}
