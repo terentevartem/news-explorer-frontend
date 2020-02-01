@@ -1,0 +1,27 @@
+.cards-item__save-icon {
+  height: 19px;
+  width: 14px;
+  background-image: url(../../../images/save_icon.svg);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .cards-item__save-icon {
+    height: 19px;
+    width: 14px;
+    background-image: url(../../../images/save_icon.svg);
+    margin: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-item__save-icon {
+    height: 19px;
+    width: 14px;
+    background-image: url(../../../images/save_icon.svg);
+    margin: auto;
+    box-sizing: border-box;
+  }
+}

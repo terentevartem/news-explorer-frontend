@@ -1,0 +1,25 @@
+@import url(./__avatar/about__avatar.css);
+@import url(./__title/about__title.css);
+@import url(./__description/about__description.css);
+@import url(./__container/about__container.css);
+
+.about{
+  height: 624px;
+  background: #FFF;
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .about{
+    height: 354px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .about{
+    height: 752px;
+    display: flex;
+    flex-direction: column;
+  }
+}

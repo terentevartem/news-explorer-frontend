@@ -1,0 +1,44 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/about/about.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header-page-about/header-page-about.css);
+@import url(../blocks/header-page-saved-news/header-page-saved-news.css);
+@import url(../blocks/not-found/not-found.css);
+@import url(../blocks/preloader/preloader.css);
+@import url(../blocks/results/results.css);
+@import url(../blocks/technologies/technologies.css);
+@import url(../blocks/commits/commits.css);
+@import url(../blocks/popup-auth/popup-auth.css);
+@import url(../blocks/cards-item/cards-item.css);
+@import url(../blocks/auth-form/auth-form.css);
+@import url(../blocks/popup-login/popup-login.css);
+@import url(../blocks/popup-registration/popup-registration.css);
+@import url(../blocks/swiper/swiper.css);
+@import url(../blocks/commit/commit.css);
+@import url(../blocks/menu/menu.css);
+@import url(../blocks/menu-button/menu-button.css);
+@import url(../blocks/mobile-popup/mobile-popup.css);
+@import url(../blocks/technologies-item/technologies-item.css);
+
+a {
+  text-decoration: none;
+}
+
+button, h1, h2, h3, h4, input {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.page {
+  max-width: 1440px;
+  min-width: 320px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,9 @@
+@import url(./__title/technologies-item__title.css);
+
+.technologies-item {
+  width: 120px;
+  height: 153px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

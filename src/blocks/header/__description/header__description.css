@@ -1,0 +1,39 @@
+.header__description {
+  width: 545px;
+  height: 48px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFF;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header__description {
+    width: 452px;
+    height: 48px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFF;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__description {
+    width: 288px;
+    height: 72px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFF;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,24 @@
+@import url(./_black/menu-button__about_black.css);
+@import url(./_inactive/menu-button__about_inactive.css);
+@import url(./_inactive-black/menu-button__about_inactive-black.css);
+@import url(./_selected/menu-button__about_selected.css);
+
+.menu-button__about {
+  margin-top: 30px;
+  margin-left: 34px;
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .menu-button__about {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-button__about {
+    margin-top: 22px;
+    margin-left: 16px;
+  }
+}

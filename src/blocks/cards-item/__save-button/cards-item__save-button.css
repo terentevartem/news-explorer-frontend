@@ -1,0 +1,30 @@
+.cards-item__save-button {
+  margin-left: auto;
+  height: 40px;
+  width: 40px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .cards-item__save-button {
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-item__save-button {
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+  }
+}

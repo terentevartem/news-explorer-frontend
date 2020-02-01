@@ -1,0 +1,36 @@
+@import url(./_black/menu__logo_black.css);
+@import url(./_white/menu__logo_white.css);
+
+.menu__logo {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-left: 104px;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .menu__logo {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 22px;
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu__logo {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+}

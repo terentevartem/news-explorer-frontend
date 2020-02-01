@@ -1,0 +1,7 @@
+.menu-button__about_inactive {
+  color: #B6BCBF;
+}
+
+.menu-button__about_inactive:hover {
+  color: #000;
+}
