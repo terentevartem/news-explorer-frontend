@@ -1,6 +1,7 @@
 import "./pages/index.css";
 "use strict";
 import '../node_modules/swiper/css/swiper.min.css';
+import Header from './js/components/header';
 
 const buttonPopupLogin = document.querySelector('.menu-button__authorization');
 const buttonOptionalPopupRegistration = document.querySelector('.auth-form__optional-link-registration');
@@ -54,3 +55,9 @@ menuMobileButtonClose.addEventListener('click', function () {
   popupMenuMobile.close();
 });
 
+function check(){
+  console.log('check');
+};
+
+const header = new Header({});
+header.render({});
