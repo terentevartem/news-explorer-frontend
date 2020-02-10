@@ -1,6 +1,9 @@
 import "./pages/index.css";
 "use strict";
-import Swiper from 'swiper';
+import Swiper        from 'swiper';
+import constants     from "./js/constants";
+import GitHubAPI     from "./js/api/githubapi";
+import GitHubCommits from "./js/components/githubcommits";
 
 const menuMobileButton = document.querySelector('.menu__mobile-button');
 const menuMobileButtonClose = document.querySelector('.mobile-popup__button-close');
@@ -29,7 +32,7 @@ menuMobileButtonClose.addEventListener('click', function () {
   popupMenuMobile.close();
 });
 
-const swiper = new Swiper('.swiper__container', {
+const swiper = new Swiper('.swiper-container', {
   updateOnWindowResize: true,
   slidesPerView: 3,
   spaceBetween: 10,
@@ -60,4 +63,19 @@ const swiper = new Swiper('.swiper__container', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-})
+});
+
+
+const gitHubAPI = new GitHubAPI({
+  url: constants.gitHub.url,
+  maxCommits: constants.gitHub.maxCommits
+});
+const gitHubCommits = new GitHubCommits({
+  api: gitHubAPI,
+  element: document.querySelector('.swiper'),
+  swiperUpdate: swiper.update.bind(swiper),
+  template: document.querySelector('#commitTemplate'),
+  container: document.querySelector('.swiper-wrapper'),
+});
+
+gitHubCommits.render();

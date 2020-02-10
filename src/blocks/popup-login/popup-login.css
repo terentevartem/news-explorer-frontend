@@ -1,4 +1,4 @@
-.popup-login.popup_is-opened {
+.popup-login {
   display: flex;
   z-index: 5;
 }

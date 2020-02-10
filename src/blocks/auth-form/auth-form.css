@@ -4,3 +4,4 @@
 @import url(./__subtitle/auth-form__subtitle.css);
 @import url(./__optional-link-login/auth-form__optional-link-login.css);
 @import url(./__optional-link-registration/auth-form__optional-link-registration.css);
+@import url(./__error/auth-form__error.css);

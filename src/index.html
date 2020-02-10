@@ -25,19 +25,27 @@
               <a href="./about.html" class="menu-button__about menu-button__about_inactive-black">
                 О проекте
               </a>
+              <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_inactive">
+                Сохраненные статьи
+              </a>
               <div class="menu-button__authorization menu-button__authorization_white">
                 Авторизоваться
+              </div>
+              <div class="menu-button__logout menu-button__logout_white">
+                Грета
+                <div class="menu-button__logout_icon-white">
+                </div>
               </div>
             </div>
             <div class="menu__mobile-button menu__mobile-button_white">
             </div>
-            <div class="menu__mobile mobile-popup">
+            <div class="menu__mobile mobile-popup invisible">
               <div class="mobile-popup__content">
                 <div class="mobile-popup__header">
                   <a href="./index.html" class="menu__logo menu__logo_white">
                     NewsExplorer
                   </a>
-                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close">
+                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
                   <a href="./index.html" class="mobile-popup__button">
@@ -61,9 +69,8 @@
               Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
             </h3>
             <form class="header__search">
-              <div class="header__search-input">
-                  Природа
-              </div>
+              <input name="queryString" class="header__search-input" placeholder="Введите тему новости">
+              </input>
               <button class="header__search-button" type="submit">
                 Искать
               </button>
@@ -71,127 +78,49 @@
           </div>
       </header>
       <div class="results">
-        <div class="results__container">
+        <div class="results__container invisible">
           <h3 class="results__title">
             Результаты поиска
           </h3>
           <div class="results__cards">
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button">
-                  <div class="cards-item__save-icon">
+            <template id="news_card">
+              <div class="cards-item">
+                <div class="cards-item__container">
+                  <!-- <div class="cards-item__save-button invisible"> -->
+                  <div class="cards-item__button-container">
+                    <div class="cards-item__save-button invisible">
+                      <div class="cards-item__save-icon ">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cards-item__date">
+                    2 августа, 2019
+                  </div>
+                  <div class="cards-item__title">
+                    Национальное достояние – парки
+                  </div>
+                  <div class="cards-item__description">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </div>
+                  <div class="cards-item__author">
+                    Лента.ру
                   </div>
                 </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
               </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
+          </template>
           </div>
-          <button class="results__button">
+          <button class="results__button invisible">
             Показать еще
           </button>
         </div>
-      </div>
-      <section class="preloader">
-        <div class="preloader__container">
+        <div class="preloader__container invisible">
             <i class="preloader__circle"></i>
             <h5 class="preloader__text">
               Идет поиск новостей...
             </h5>
         </div>
-      </section>
-      <section class="not-found">
-        <div class="not-found__container">
+        <div class="not-found__container invisible">
           <div class="not-found__image">
           </div>
           <h4 class="not-found__title">
@@ -201,7 +130,7 @@
             К сожалению по вашему запросу<br>ничего не найдено.
           </h5>
         </div>
-      </section>
+      </div>
       <section class="about">
           <img class="about__avatar" src="<%= require('./images/image-03.png').default%>" alt="Фотография автора">
           <div class="about__container">
@@ -238,34 +167,36 @@
         </p>
       </footer>
 
-      <div class="popup-auth popup-login">
+      <div class="popup-auth popup-login invisible">
           <div class="popup-auth__content">
-            <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+            <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
             <h3 class="popup-auth__title">Вход</h3>
             <form class="popup-auth__auth-form auth-form" name="login">
                 <div class="auth-form__subtitle">Email</div>
-                <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+                <input type="text" name="email" class="auth-form__input" placeholder="Введите почту" >
                 <div class="auth-form__subtitle">Пароль</div>
-                <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
-                <button disabled class="auth-form__button">Войти</button>
+                <input type="text" name="password" class="auth-form__input" placeholder="Введите пароль" >
+                <label class="auth-form__error"></label>
+                <button class="auth-form__button">Войти</button>
                 <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
             </form>
           </div>
         </div>
 
-        <div class="popup-auth popup-registration">
+        <div class="popup-auth popup-registration invisible">
           <div class="popup-auth__content">
-            <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+            <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
             <h3 class="popup-auth__title">Регистрация</h3>
             <form class="popup-auth__auth-form auth-form" name="login">
                 <div class="auth-form__subtitle">Email</div>
-                <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+                <input type="text" name="email" class="auth-form__input" placeholder="Введите почту" >
                 <div class="auth-form__subtitle">Пароль</div>
-                <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+                <input type="text" name="password" class="auth-form__input" placeholder="Введите пароль" >
                 <div class="auth-form__subtitle">Имя</div>
-                <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
-                <button disabled class="auth-form__button">Зарегистрироваться</button>
-                <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+                <input type="text" name="name" class="auth-form__input" placeholder="Введите своё имя" >
+                <label class="auth-form__error"></label>
+                <button class="auth-form__button">Зарегистрироваться</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
             </form>
           </div>
         </div>

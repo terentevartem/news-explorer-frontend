@@ -3,12 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
-const CreateFileWebpack = require('create-file-webpack')
+const CreateFileWebpack = require('create-file-webpack');
 
 module.exports = {
   entry: {
     main: './src/index.js',
     about: './src/about.js',
+    'saved-news': './src/saved-news.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

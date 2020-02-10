@@ -1,6 +1,8 @@
-@import url(./_white/menu-button__authorization_white.css);
+@import url(./_icon/menu-button__logout_icon.css);
+@import url(./_white/menu-button__logout_white.css);
+@import url(./_icon-white/menu-button__logout_icon-white.css);
 
-.menu-button__authorization {
+.menu-button__logout {
   display: flex;
   margin-top: 19px;
   margin-bottom: 13px;

@@ -6,6 +6,11 @@
   font-size: 26px;
   line-height: 30px;
   color: #1A1B22;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -17,6 +22,11 @@
     font-size: 22px;
     line-height: 24px;
     color: #1A1B22;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -29,5 +39,9 @@
     font-size: 22px;
     line-height: 24px;
     color: #1A1B22;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }
