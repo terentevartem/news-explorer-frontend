@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.">
+    <meta name="keywords" content="новости,статьи,дипломный проект,верстка,БЭМ,Webpack,Mongo DB,Яндекс.Практикум,HTML,CSS,JavaScript,Node.js">
+    <meta name="author" content="Артем Терентьев">
+    <title>NewsExplorer</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="css/style.52954ac4b580317a9dff.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+          <div class="menu">
+            <a href="./index.html" class="menu__logo menu__logo_white">
+              NewsExplorer
+            </a>
+            <div class="menu__buttons menu-button">
+              <a href="./index.html" class="menu-button__main menu-button__main_white">
+                Главная
+              </a>
+              <a href="./about.html" class="menu-button__about menu-button__about_inactive-black">
+                О проекте
+              </a>
+              <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_inactive">
+                Сохраненные статьи
+              </a>
+              <div class="menu-button__authorization menu-button__authorization_white invisible">
+                Авторизоваться
+              </div>
+              <div class="menu-button__logout menu-button__logout_white invisible">
+                <span class="user_name">Грета</span>
+                <div class="menu-button__logout_icon-white">
+                </div>
+              </div>
+            </div>
+            <div class="menu__mobile-button menu__mobile-button_white">
+            </div>
+            <div class="menu__mobile mobile-popup invisible">
+              <div class="mobile-popup__content">
+                <div class="mobile-popup__header">
+                  <a href="./index.html" class="menu__logo menu__logo_white">
+                    NewsExplorer
+                  </a>
+                  <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close button_close">
+                </div>
+                <div class="mobile-popup__buttons">
+                  <a href="./index.html" class="mobile-popup__button">
+                    Главная
+                  </a>
+                  <a href="./about.html" class="mobile-popup__button">
+                    О проекте
+                  </a>
+                  <div class="mobile-popup__button-auth">
+                    Авторизоваться
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__title-container">
+            <h1 class="header__title">
+              Что в мире творится?
+            </h1>
+            <h3 class="header__description">
+              Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+            </h3>
+            <form class="header__search">
+              <input name="queryString" class="header__search-input" placeholder="Введите тему новости">
+              <button class="header__search-button" type="submit">
+                Искать
+              </button>
+            </form>
+          </div>
+      </header>
+      <div class="results">
+        <div class="results__container invisible">
+          <h3 class="results__title">
+            Результаты поиска
+          </h3>
+          <div class="results__cards">
+            <template id="news_card">
+              <div class="cards-item">
+                <div class="cards-item__container">
+                  <!-- <div class="cards-item__save-button invisible"> -->
+                  <div class="cards-item__button-container">
+                    <div class="cards-item__save-button invisible">
+                      <div class="cards-item__save-icon ">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cards-item__date">
+                    2 августа, 2019
+                  </div>
+                  <div class="cards-item__title">
+                    Национальное достояние – парки
+                  </div>
+                  <div class="cards-item__description">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                  </div>
+                  <div class="cards-item__author">
+                    Лента.ру
+                  </div>
+                </div>
+              </div>
+          </template>
+          </div>
+          <button class="results__button invisible">
+            Показать еще
+          </button>
+        </div>
+        <div class="preloader__container invisible">
+            <i class="preloader__circle"></i>
+            <h5 class="preloader__text">
+              Идет поиск новостей...
+            </h5>
+        </div>
+        <div class="not-found__container invisible">
+          <div class="not-found__image">
+          </div>
+          <h4 class="not-found__title">
+            Ничего не найдено
+          </h4>
+          <h5 class="not-found__description">
+            К сожалению по вашему запросу<br>ничего не найдено.
+          </h5>
+        </div>
+      </div>
+      <section class="about">
+          <img class="about__avatar" src="./images/image-03.png" alt="Фотография автора">
+          <div class="about__container">
+            <h3 class="about__title">
+              Об авторе
+            </h3>
+            <p class="about__description">
+              Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+              <br><br>
+              Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+            </p>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer__copyright">
+          © 2019 news-explorer.ga
+        </p>
+        <nav class="footer__menu">
+          <a href="./index.html" class="footer__button">
+            Главная
+          </a>
+          <a href="./about.html" class="footer__button">
+            О проекте
+          </a>
+          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__button">
+            Яндекс.Практикум
+          </a>
+        </nav>
+        <p class="footer__icons footer__icon">
+          <a href="https://github.com/terentevartem" target="_blank" class="footer__icon footer__icon_github">
+          </a>
+          <a href="https://www.facebook.com" target="_blank" class="footer__icon footer__icon_fb">
+          </a>
+        </p>
+      </footer>
+
+      <div class="popup-auth popup-login invisible">
+          <div class="popup-auth__content">
+            <img src="./images/close-mid.png" alt="" class="popup-auth__button-close button_close">
+            <h3 class="popup-auth__title">Вход</h3>
+            <form class="popup-auth__auth-form auth-form" name="login">
+                <div class="auth-form__subtitle">Email</div>
+                <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+                <div class="auth-form__subtitle">Пароль</div>
+                <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <span class="auth-form__error auth-form__error_main"></span>
+                <button class="auth-form__button">Войти</button>
+                <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="popup-auth popup-registration invisible">
+          <div class="popup-auth__content">
+            <img src="./images/close-mid.png" alt="" class="popup-auth__button-close button_close">
+            <h3 class="popup-auth__title">Регистрация</h3>
+            <form class="popup-auth__auth-form auth-form" name="login">
+                <div class="auth-form__subtitle">Email</div>
+                <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+                <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+                <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
+                <div class="auth-form__subtitle">Пароль</div>
+                <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <span class="auth-form__error auth-form__error_password invisible">Неправильная длина пароля</span>
+                <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
+                <div class="auth-form__subtitle">Имя</div>
+                <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
+               <span class="auth-form__error auth-form__error_name invisible">Неправильная длина имени</span>
+               <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
+                <label class="auth-form__error auth-form__error_main"></label>
+                <button class="auth-form__button">Зарегистрироваться</button>
+              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <script src="main.a12906dfd1c2df224469.js"></script>
+  </body>
+</html>
