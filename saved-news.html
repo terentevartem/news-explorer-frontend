@@ -9,11 +9,11 @@
     <meta name="author" content="Артем Терентьев">
     <title>Сохранённые статьи - NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="css/style.40fdc09a3ba10832e1e1.css">
+    <link rel="stylesheet" href="css/style.52954ac4b580317a9dff.css">
   </head>
   <body>
     <div class="page">
-      <header class="header-page-saved-news">
+      <header class="header header-page-saved-news">
           <div class="menu">
             <a href="./index.html" class="menu__logo menu__logo_black">
               NewsExplorer
@@ -28,21 +28,21 @@
               <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_selected menu-button__saved-news_black">
                 Сохраненные статьи
               </a>
-              <div class="menu-button__authorization">
-                Грета
-                <div class="menu-button__authorization_logout-icon">
+              <div class="menu-button__logout">
+                <span class="user_name">Грета</span>
+                <div class="menu-button__logout_icon">
                 </div>
               </div>
             </div>
             <div class="menu__mobile-button menu__mobile-button_black">
             </div>
-            <div class="menu__mobile mobile-popup">
+            <div class="menu__mobile mobile-popup invisible">
               <div class="mobile-popup__content">
                 <div class="mobile-popup__header">
                   <a href="./index.html" class="menu__logo menu__logo_white">
                     NewsExplorer
                   </a>
-                  <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close">
+                  <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
                   <a href="./index.html" class="mobile-popup__button">
@@ -62,78 +62,19 @@
             Сохранённые статьи
           </div>
           <div class="header-page-saved-news__title">
-            Грета, у вас 5<br> сохранённых статей
+            <span class="user_name">Грета</span>, у вас <span class="header-page-saved-news__title-count"></span> сохранённых статей
           </div>
           <div class="header-page-saved-news__keywords">
-            По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b>
+            По ключевым словам: <span class="header-page-saved-news__keywords-words"></span>
           </div>
       </header>
       <div class="results">
-        <div class="results__container_page-saved-news">
+        <div class="results__container results__container_page-saved-news">
           <div class="results__cards">
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-                <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
-                    <div class="cards-item__save-icon">
-                    </div>
-                  </div>
-                  <div class="cards-item__date">
-                    2 августа, 2019
-                  </div>
-                  <div class="cards-item__title">
-                    Национальное достояние – парки
-                  </div>
-                  <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </div>
-                  <div class="cards-item__author">
-                    Лента.ру
-                  </div>
-                </div>
-              </div>
+            <template id="news_card">
               <div class="cards-item">
                 <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
+                  <div class="cards-item__save-button invisible">
                     <div class="cards-item__save-icon">
                     </div>
                   </div>
@@ -144,33 +85,15 @@
                     Национальное достояние – парки
                   </div>
                   <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
                   </div>
                   <div class="cards-item__author">
                     Лента.ру
                   </div>
                 </div>
               </div>
-              <div class="cards-item">
-                <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
-                    <div class="cards-item__save-icon">
-                    </div>
-                  </div>
-                  <div class="cards-item__date">
-                    2 августа, 2019
-                  </div>
-                  <div class="cards-item__title">
-                    Национальное достояние – парки
-                  </div>
-                  <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </div>
-                  <div class="cards-item__author">
-                    Лента.ру
-                  </div>
-                </div>
-              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -197,9 +120,9 @@
         </p>
       </footer>
 
-      <div class="popup-auth popup-login">
+      <div class="popup-auth popup-login invisible">
         <div class="popup-auth__content">
-          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close">
+          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Вход</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
@@ -212,9 +135,9 @@
         </div>
       </div>
 
-      <div class="popup-auth popup-registration">
+      <div class="popup-auth popup-registration invisible">
         <div class="popup-auth__content">
-          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close">
+          <img src="./images/close-mid.png" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Регистрация</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
@@ -230,6 +153,6 @@
       </div>
 
     </div>
-    <script src="main.466d0beea967826698f3.js"></script>
+    <script src="savedNews.a0bf4a12bd4fb13488cd.js"></script>
   </body>
 </html>
