@@ -1,4 +1,5 @@
 @import url(./_white/menu-button__authorization_white.css);
+@import url(./_black/menu-button__authorization_black.css);
 
 .menu-button__authorization {
   display: flex;

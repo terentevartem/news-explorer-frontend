@@ -1,5 +1,4 @@
 import BaseComponent from "./basecomponent";
-import EVENTS        from "../events";
 
 class ArticlesContainer extends BaseComponent {
   constructor(props) {
@@ -8,16 +7,18 @@ class ArticlesContainer extends BaseComponent {
     this.template = document.querySelector('#news_card');
     this.container = document.querySelector('.results__cards');
     this.loggedIn = props.loggedIn;
-   }
+  }
 
   showNews(news) {
     this.news = news;
     if (news.length === 0) {
       this.noNews();
     } else {
-      this.resultsContainer.show();
-      this.renderNews(0, this.pageSize);
+      this.doShowNews();
     }
+  }
+
+  doShowNews() {
   }
 
   noNews() {
@@ -33,20 +34,20 @@ class ArticlesContainer extends BaseComponent {
 
   createNewsCard(data) {
     const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
-    'сентября', 'октября', 'ноября', 'декабря'];
+      'сентября', 'октября', 'ноября', 'декабря'];
     const newCard = this.template.cloneNode(true).content;
     newCard.querySelector('.cards-item__title').textContent = data.title;
     newCard.querySelector('.cards-item__description').textContent = data.text;
     newCard.querySelector('.cards-item__author').textContent = data.source;
     newCard.querySelector('.cards-item').style.backgroundImage = `url(${data.image})`;
-    // newCard.querySelector('.cards-item__date').textContent = data.date;
     newCard.querySelector('.cards-item__date').textContent = `${data.date.getDate()} ${month[data.date.getMonth()]} ${data.date.getFullYear()}`;
     const saveCardButton = newCard.querySelector('.cards-item__save-button');
     if (this.loggedIn) {
       saveCardButton.classList.remove('invisible');
     }
-    saveCardButton.addEventListener('click', () => {
-      document.dispatchEvent(new CustomEvent(EVENTS.saveNewsData, {detail: data}));
+    saveCardButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.onCardClicked(data);
     });
     /*
     newCard.querySelector(this.card.node).href = data.link;
@@ -57,6 +58,10 @@ class ArticlesContainer extends BaseComponent {
        newCard.querySelector(this.card.icon.node).setAttribute('cardID', this._position);
      }*/
     return newCard;
+  }
+
+  onCardClicked(data) {
+
   }
 
   clear() {

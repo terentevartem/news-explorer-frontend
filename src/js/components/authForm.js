@@ -6,11 +6,17 @@ class AuthForm extends Popup {
     super(props.element);
     document.addEventListener(EVENTS.authButtonClicked, this.show.bind(this));
     this.api = props.api;
-    this.errorField = this.element.querySelector('.auth-form__error');
+    this.errorField = this.element.querySelector('.auth-form__error_main');
     this.inputs = this.element.querySelectorAll('.auth-form__input');
-    console.log(this.inputs);
     this.form = this.element.querySelector('.auth-form');
     this.form.onsubmit = this.signIn.bind(this);
+  }
+
+  show() {
+    super.show();
+    for (let input of this.inputs) {
+      input.value = '';
+    }
   }
 
   async signIn(event) {
@@ -21,7 +27,8 @@ class AuthForm extends Popup {
     }
     await this.api.signIn(data).then(() => {
       this.errorField.textContent = 'Authorized';
-      document.dispatchEvent(new Event(EVENTS.authComplete));
+      document.dispatchEvent(new CustomEvent(EVENTS.authChanged, {detail: {isLoggedIn: true}}));
+      this.hide();
     }).catch(error => {
       this.errorField.textContent = error.message;
     });

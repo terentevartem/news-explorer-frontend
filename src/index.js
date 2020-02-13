@@ -10,18 +10,12 @@ import constants        from "./js/constants";
 import NewsAPI          from "./js/api/newsapi";
 import SearchForm       from "./js/components/searchform";
 import ResultsContainer from "./js/components/resultscontainer";
+import AuthManager      from "./js/components/authmanager";
 
-//const domain = 'api.news-explorer.ga';
-const domain = 'localhost:3000';
-const protocol = `http://`;
-const api = new MainApi({
-  signIn: `${protocol}${domain}/signin`,
-  signUp: `${protocol}${domain}/signup`,
-  createArticle: `${protocol}${domain}/articles`
-});
+const api = new MainApi(constants.mainApi);
 const newsApi = new NewsAPI({url: constants.newsUrl});
 
-
+const header = new Header({element: document.querySelector('.header')});
 const buttonOptionalPopupRegistration = document.querySelector('.auth-form__optional-link-registration');
 const buttonOptionalPopupLogin = document.querySelector('.auth-form__optional-link-login');
 const popupLogin = new AuthForm({api, element: document.querySelector('.popup-login')});
@@ -49,12 +43,13 @@ buttonOptionalPopupLogin.addEventListener('click', function () {
   popupRegistration.hide();
 });
 
-const header = new Header({element: document.querySelector('.header')});
-header.render({});
+const authManager = new AuthManager({
+  header, api, results
+});
+authManager.init();
+
 document.addEventListener(EVENTS.saveNewsData, (customEvent) => {
   api.createArticle(customEvent.detail);
 });
-document.addEventListener(EVENTS.authComplete, () => {
-  header.render({isLoggedIn: true});
-  results.render({isLoggedIn: true});
-});
+
+

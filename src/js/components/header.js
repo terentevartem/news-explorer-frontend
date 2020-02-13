@@ -1,6 +1,7 @@
 import BaseComponent from "./basecomponent";
 import MobileMenu    from "./mobilemenu";
 import AuthButton    from "./authButton";
+import EVENTS        from "../events";
 
 class Header extends BaseComponent {
   constructor(props) {
@@ -12,24 +13,37 @@ class Header extends BaseComponent {
       popupMenuMobile.show();
     });
 
-    this.authButton = new AuthButton({element: this.element.querySelector('.menu-button__authorization')});
+    const authButtonElement = this.element.querySelector('.menu-button__authorization');
+    if (authButtonElement) {
+      this.authButton = new AuthButton({element: authButtonElement});
+    }
     this.savedNewsButton = this.element.querySelector('.menu-button__saved-news');
-    this.loggedInDiv = this.element.querySelector('.menu-button__logout');
+    this.logoutButton = this.element.querySelector('.menu-button__logout');
+    this.logoutButton.addEventListener('click', function () {
+      document.dispatchEvent(new Event(EVENTS.logoutClicked));
+    });
+    this.userNames = this.element.querySelectorAll('.user_name');
   }
 
   render(props) {
     let isLoggedIn = props.isLoggedIn;
     let userName = props.userName;
     if (isLoggedIn) {
-      this.authButton.hide();
+      if (this.authButton) {
+        this.authButton.hide();
+      }
       this.savedNewsButton.classList.remove('invisible');
-      this.loggedInDiv.classList.remove('invisible');
+      this.logoutButton.classList.remove('invisible');
+      for (let userNameTag of this.userNames) {
+        userNameTag.textContent = userName;
+      }
     } else {
-      this.authButton.show();
+      if (this.authButton) {
+        this.authButton.show();
+      }
       this.savedNewsButton.classList.add('invisible');
-      this.loggedInDiv.classList.add('invisible');
+      this.logoutButton.classList.add('invisible');
     }
-
   }
 }
 

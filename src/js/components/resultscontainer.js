@@ -1,5 +1,6 @@
 import BaseComponent     from "./basecomponent";
 import ArticlesContainer from "./articlescontainer";
+import EVENTS            from "../events";
 
 class ResultsContainer extends ArticlesContainer {
   constructor(props) {
@@ -11,14 +12,9 @@ class ResultsContainer extends ArticlesContainer {
     this.notFound = new BaseComponent(this.element.querySelector('.not-found__container'));
   }
 
-  showNews(news) {
-    this.news = news;
-    if (news.length === 0) {
-      this.notFound.show();
-    } else {
-      this.resultsContainer.show();
-      this.renderNews(0, this.pageSize);
-    }
+  doShowNews() {
+    this.resultsContainer.show();
+    this.renderNews(0, this.pageSize);
   }
 
   renderNews(startNumber, pageSize) {
@@ -44,6 +40,10 @@ class ResultsContainer extends ArticlesContainer {
     this.currentIndex = 0;
     this.showMoreButton.hide();
     this.notFound.hide();
+  }
+
+  onCardClicked(data) {
+    document.dispatchEvent(new CustomEvent(EVENTS.saveNewsData, {detail: data}));
   }
 
   showMore() {

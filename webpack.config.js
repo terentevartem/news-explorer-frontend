@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
     about: './src/about.js',
-    'saved-news': './src/saved-news.js',
+    savedNews: './src/saved-news.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

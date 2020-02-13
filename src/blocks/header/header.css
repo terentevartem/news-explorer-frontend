@@ -6,13 +6,13 @@
 @import url(./__search-button/search__button.css);
 @import url(./__search-input/search__input.css);
 
-.header {
+.header-main {
   height: 576px;
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {
-  .header {
+  .header-main {
     height: 400px;
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
     background-size: cover;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 767px) {
-  .header {
+  .header-main {
     height: 536px;
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
     background-size: cover;

@@ -4,33 +4,39 @@ import Swiper        from 'swiper';
 import constants     from "./js/constants";
 import GitHubAPI     from "./js/api/githubapi";
 import GitHubCommits from "./js/components/githubcommits";
+import AuthManager   from "./js/components/authmanager";
+import AuthForm         from './js/components/authForm';
+import RegistrationForm from './js/components/registrationForm';
+import Header                 from "./js/components/header";
+import MainApi                from "./js/api/mainapi";
+import EVENTS                 from "./js/events";
 
-const menuMobileButton = document.querySelector('.menu__mobile-button');
-const menuMobileButtonClose = document.querySelector('.mobile-popup__button-close');
+const api = new MainApi(constants.mainApi);
+const header = new Header({element: document.querySelector('.header')});
+const buttonOptionalPopupRegistration = document.querySelector('.auth-form__optional-link-registration');
+const buttonOptionalPopupLogin = document.querySelector('.auth-form__optional-link-login');
+const popupLogin = new AuthForm({api, element: document.querySelector('.popup-login')});
+const popupRegistration = new RegistrationForm({api, element: document.querySelector('.popup-registration')});
 
-class Popup {
-  constructor(popupElement) {
-    this.popupElement = popupElement;
-  }
-
-  open() {
-    this.popupElement.classList.add('popup_is-opened');
-  }
-
-  close() {
-    this.popupElement.classList.remove('popup_is-opened');
-  }
+async function initNews() {
+  const news = await api.getArticles();
+  results.showNews(news.data);
 }
 
-const popupMenuMobile = new Popup(document.querySelector('.menu__mobile'));
-
-menuMobileButton.addEventListener('click', function () {
-  popupMenuMobile.open();
+buttonOptionalPopupRegistration.addEventListener('click', function () {
+  popupRegistration.show();
+  popupLogin.hide();
 });
 
-menuMobileButtonClose.addEventListener('click', function () {
-  popupMenuMobile.close();
+buttonOptionalPopupLogin.addEventListener('click', function () {
+  popupLogin.show();
+  popupRegistration.hide();
 });
+
+const authManager = new AuthManager({
+  header, api
+});
+authManager.init();
 
 const swiper = new Swiper('.swiper-container', {
   updateOnWindowResize: true,
@@ -70,6 +76,7 @@ const gitHubAPI = new GitHubAPI({
   url: constants.gitHub.url,
   maxCommits: constants.gitHub.maxCommits
 });
+
 const gitHubCommits = new GitHubCommits({
   api: gitHubAPI,
   element: document.querySelector('.swiper'),

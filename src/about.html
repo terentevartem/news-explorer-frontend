@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="header-page-about">
+      <header class="header header-page-about">
           <div class="menu">
             <a href="./index.html" class="menu__logo menu__logo_black">
               NewsExplorer
@@ -28,8 +28,11 @@
               <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_inactive">
                 Сохраненные статьи
               </a>
+              <div class="menu-button__authorization menu-button__authorization_black invisible">
+                Авторизоваться
+              </div>
               <div class="menu-button__logout">
-                Грета
+                <span class="user_name">Грета</span>
                 <div class="menu-button__logout_icon">
                 </div>
               </div>
@@ -42,7 +45,7 @@
                   <a href="./index.html" class="menu__logo menu__logo_white">
                     NewsExplorer
                   </a>
-                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close">
+                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
                   <a href="./index.html" class="mobile-popup__button">
@@ -50,9 +53,6 @@
                   </a>
                   <a href="./about.html" class="mobile-popup__button">
                     О проекте
-                  </a>
-                  <a href="./saved-news.html" class="mobile-popup__button">
-                    Сохраненные статьи
                   </a>
                   <div class="mobile-popup__button-auth">
                     Авторизоваться
@@ -186,14 +186,15 @@
 
       <div class="popup-auth popup-login invisible">
         <div class="popup-auth__content">
-          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Вход</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
-              <button disabled class="auth-form__button">Войти</button>
+              <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_main"></span>
+              <button class="auth-form__button">Войти</button>
               <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
           </form>
         </div>
@@ -201,17 +202,24 @@
 
       <div class="popup-auth popup-registration invisible">
         <div class="popup-auth__content">
-          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Регистрация</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+              <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+              <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_password invisible">Неправильная длина пароля</span>
+              <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Имя</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
-              <button disabled class="auth-form__button">Зарегистрироваться</button>
-              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+              <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
+             <span class="auth-form__error auth-form__error_name invisible">Неправильная длина имени</span>
+             <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
+              <label class="auth-form__error auth-form__error_main"></label>
+              <button class="auth-form__button">Зарегистрироваться</button>
+            <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
           </form>
         </div>
       </div>

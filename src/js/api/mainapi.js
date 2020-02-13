@@ -3,17 +3,21 @@ class MainApi {
     this.props = props;
   }
 
+  getUrl(url){
+     return `${this.props.protocol}${this.props.domain}${url}`;
+  }
+
   async signUp(data) {
-    await this.request(this.props.signUp, this.getRequestData(data));
+    await this.request(this.getUrl(this.props.signUp), this.getRequestData(data));
   }
 
   request(url, requestData) {
     return fetch(url, requestData)
-      .then((res) => {
+      .then(async (res) => {
         if (!res.ok) {
           throw new Error(res.statusText)
         }
-        return res.json();
+        return await res.json();
       })
       .catch((err) => {
         throw new Error(err.message);
@@ -25,29 +29,85 @@ class MainApi {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
+        'authorization': `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(data)
     };
   }
 
   async signIn(data) {
-    await this.request(this.props.signIn, this.getRequestData(data));
+    const result = await this.request(this.getUrl(this.props.signIn), this.getRequestData(data));
+    if (result.token) {
+      localStorage.setItem('token', result.token);
+    }
+  }
+
+  singOut() {
+    localStorage.removeItem('token');
   }
 
   getUserData() {
-
+    const data = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    };
+    return fetch(this.getUrl(this.props.userInfo), data)
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText)
+        }
+        return await res.json();
+      })
+      .catch((err) => {
+        throw new Error(err.message);
+      });
   }
 
   async getArticles() {
-    await this.request(this.props.createArticle);
+    const data = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    };
+    return fetch(this.getUrl(this.props.articles), data)
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText)
+        }
+        return await res.json();
+      })
+      .catch((err) => {
+        throw new Error(err.message);
+      });
   }
 
   async createArticle(data) {
-    await this.request(this.props.createArticle, this.getRequestData(data));
+    await this.request(this.getUrl(this.props.articles), this.getRequestData(data));
   }
 
-  removeArticle() {
-
+  removeArticle(id) {
+    const data = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    };
+    return fetch(this.getUrl(`${this.props.articles}/${id}`), data)
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText)
+        }
+        return await res.json();
+      })
+      .catch((err) => {
+        throw new Error(err.message);
+      });
   }
 }
 

@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="header">
+      <header class="header header-main">
           <div class="menu">
             <a href="./index.html" class="menu__logo menu__logo_white">
               NewsExplorer
@@ -28,11 +28,11 @@
               <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_inactive">
                 Сохраненные статьи
               </a>
-              <div class="menu-button__authorization menu-button__authorization_white">
+              <div class="menu-button__authorization menu-button__authorization_white invisible">
                 Авторизоваться
               </div>
-              <div class="menu-button__logout menu-button__logout_white">
-                Грета
+              <div class="menu-button__logout menu-button__logout_white invisible">
+                <span class="user_name">Грета</span>
                 <div class="menu-button__logout_icon-white">
                 </div>
               </div>
@@ -70,7 +70,6 @@
             </h3>
             <form class="header__search">
               <input name="queryString" class="header__search-input" placeholder="Введите тему новости">
-              </input>
               <button class="header__search-button" type="submit">
                 Искать
               </button>
@@ -173,10 +172,10 @@
             <h3 class="popup-auth__title">Вход</h3>
             <form class="popup-auth__auth-form auth-form" name="login">
                 <div class="auth-form__subtitle">Email</div>
-                <input type="text" name="email" class="auth-form__input" placeholder="Введите почту" >
+                <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
                 <div class="auth-form__subtitle">Пароль</div>
-                <input type="text" name="password" class="auth-form__input" placeholder="Введите пароль" >
-                <label class="auth-form__error"></label>
+                <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <span class="auth-form__error auth-form__error_main"></span>
                 <button class="auth-form__button">Войти</button>
                 <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
             </form>
@@ -189,12 +188,18 @@
             <h3 class="popup-auth__title">Регистрация</h3>
             <form class="popup-auth__auth-form auth-form" name="login">
                 <div class="auth-form__subtitle">Email</div>
-                <input type="text" name="email" class="auth-form__input" placeholder="Введите почту" >
+                <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+                <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+                <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
                 <div class="auth-form__subtitle">Пароль</div>
-                <input type="text" name="password" class="auth-form__input" placeholder="Введите пароль" >
+                <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <span class="auth-form__error auth-form__error_password invisible">Неправильная длина пароля</span>
+                <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
                 <div class="auth-form__subtitle">Имя</div>
-                <input type="text" name="name" class="auth-form__input" placeholder="Введите своё имя" >
-                <label class="auth-form__error"></label>
+                <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
+               <span class="auth-form__error auth-form__error_name invisible">Неправильная длина имени</span>
+               <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
+                <label class="auth-form__error auth-form__error_main"></label>
                 <button class="auth-form__button">Зарегистрироваться</button>
               <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
             </form>

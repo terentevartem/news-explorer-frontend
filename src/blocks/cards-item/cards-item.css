@@ -22,7 +22,7 @@
   .cards-item {
     width: 224px;
     height: 420px;
-    background-size: 224px;
+    background-size: 224px 150px;
   }
 }
 
@@ -30,7 +30,7 @@
   .cards-item {
     width: 288px;
     height: 440px;
-    background-size: 288px;
+    background-size: 288px 196px;
     margin: auto;
   }
 }
