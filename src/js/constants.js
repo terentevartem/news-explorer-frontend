@@ -11,6 +11,7 @@ const constants = {
     // domain: 'api.news-explorer.ga',
     domain: 'localhost:3000',
     protocol: 'http://',
+    // protocol: 'https://',
     signIn: '/signin',
     signUp: '/signup',
     articles: '/articles',

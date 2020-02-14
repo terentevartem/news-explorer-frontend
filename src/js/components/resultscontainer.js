@@ -12,6 +12,7 @@ class ResultsContainer extends ArticlesContainer {
     this.loading = new BaseComponent(this.element.querySelector(constants.preloaderContainer));
     this.notFound = new BaseComponent(this.element.querySelector(constants.notFoundContainer));
     this.api = props.api;
+    this.loggedIn = props.loggedIn;
   }
 
   doShowNews() {
@@ -20,9 +21,11 @@ class ResultsContainer extends ArticlesContainer {
   }
 
   async renderNews(startNumber, pageSize) {
-    this.savedLinks = await this.api.getArticles().then(articles => {
-      return articles.data.map(x => x.title)
-    });
+    if (this.loggedIn) {
+      this.savedLinks = await this.api.getArticles().then(articles => {
+        return articles.data.map(x => x.title)
+      });
+    }
     super.renderNews(startNumber, pageSize);
     this.currentIndex = startNumber + pageSize;
     this.currentIndex < this.news.length ? this.showMoreButton.show() : this.showMoreButton.hide();
