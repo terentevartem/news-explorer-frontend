@@ -48,14 +48,22 @@
                   <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
-                  <a href="./index.html" class="mobile-popup__button">
+                  <a href="./index.html" class="mobile-popup__button mobile-popup__button_main">
                     Главная
                   </a>
-                  <a href="./about.html" class="mobile-popup__button">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_about">
                     О проекте
                   </a>
-                  <div class="mobile-popup__button-auth">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_saved">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_auth invisible">
                     Авторизоваться
+                  </div>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_logout invisible">
+                    <span class="user_name">Грета</span>
+                    <div class="menu-button__logout_icon-white">
+                    </div>
                   </div>
                 </div>
               </div>
