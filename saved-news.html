@@ -9,7 +9,7 @@
     <meta name="author" content="Артем Терентьев">
     <title>Сохранённые статьи - NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="css/style.52954ac4b580317a9dff.css">
+    <link rel="stylesheet" href="css/style.ef297cc993d10f59885a.css">
   </head>
   <body>
     <div class="page">
@@ -28,6 +28,9 @@
               <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_selected menu-button__saved-news_black">
                 Сохраненные статьи
               </a>
+              <div class="menu-button__authorization menu-button__authorization_black invisible">
+                Авторизоваться
+              </div>
               <div class="menu-button__logout">
                 <span class="user_name">Грета</span>
                 <div class="menu-button__logout_icon">
@@ -45,14 +48,22 @@
                   <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
-                  <a href="./index.html" class="mobile-popup__button">
+                  <a href="./index.html" class="mobile-popup__button mobile-popup__button_main">
                     Главная
                   </a>
-                  <a href="./about.html" class="mobile-popup__button">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_about">
                     О проекте
                   </a>
-                  <div class="mobile-popup__button-auth">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_saved">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_auth invisible">
                     Авторизоваться
+                  </div>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_logout invisible">
+                    <span class="user_name">Грета</span>
+                    <div class="menu-button__logout_icon-white">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -74,10 +85,10 @@
             <template id="news_card">
               <div class="cards-item">
                 <div class="cards-item__container">
-                  <div class="cards-item__save-button invisible">
-                    <div class="cards-item__save-icon">
+                  <button class="cards-item__save-button invisible">
+                    <div class="cards-item__delete-icon">
                     </div>
-                  </div>
+                  </button>
                   <div class="cards-item__date">
                     2 августа, 2019
                   </div>
@@ -126,10 +137,11 @@
           <h3 class="popup-auth__title">Вход</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
-              <button disabled class="auth-form__button">Войти</button>
+              <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_main"></span>
+              <button class="auth-form__button">Войти</button>
               <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
           </form>
         </div>
@@ -141,18 +153,25 @@
           <h3 class="popup-auth__title">Регистрация</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+              <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+              <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_password invisible">Минимальная длина пароля 8 символов</span>
+              <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Имя</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
-              <button disabled class="auth-form__button">Зарегистрироваться</button>
-              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+              <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
+             <span class="auth-form__error auth-form__error_name invisible">Длина имени должна быть от 2 до 30 символов</span>
+             <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
+              <label class="auth-form__error auth-form__error_main"></label>
+              <button class="auth-form__button">Зарегистрироваться</button>
+            <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
           </form>
         </div>
       </div>
 
     </div>
-    <script src="savedNews.c508ff8a5bb6850b5361.js"></script>
+    <script src="savedNews.70f87c7c383357c0cca0.js"></script>
   </body>
 </html>

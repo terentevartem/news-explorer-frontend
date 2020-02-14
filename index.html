@@ -9,11 +9,11 @@
     <meta name="author" content="Артем Терентьев">
     <title>NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="css/style.52954ac4b580317a9dff.css">
+    <link rel="stylesheet" href="css/style.ef297cc993d10f59885a.css">
   </head>
   <body>
     <div class="page">
-      <header class="header">
+      <header class="header header-main">
           <div class="menu">
             <a href="./index.html" class="menu__logo menu__logo_white">
               NewsExplorer
@@ -48,14 +48,22 @@
                   <img src="./images/close-mid.png" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
-                  <a href="./index.html" class="mobile-popup__button">
+                  <a href="./index.html" class="mobile-popup__button mobile-popup__button_main">
                     Главная
                   </a>
-                  <a href="./about.html" class="mobile-popup__button">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_about">
                     О проекте
                   </a>
-                  <div class="mobile-popup__button-auth">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_saved">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_auth invisible">
                     Авторизоваться
+                  </div>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_logout invisible">
+                    <span class="user_name">Грета</span>
+                    <div class="menu-button__logout_icon-white">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -85,12 +93,13 @@
             <template id="news_card">
               <div class="cards-item">
                 <div class="cards-item__container">
-                  <!-- <div class="cards-item__save-button invisible"> -->
                   <div class="cards-item__button-container">
-                    <div class="cards-item__save-button invisible">
-                      <div class="cards-item__save-icon ">
+                    <button class="cards-item__save-button invisible">
+                      <div class="cards-item__save-icon">
                       </div>
-                    </div>
+                      <div class="cards-item__saved-icon invisible">
+                      </div>
+                    </button>
                   </div>
                   <div class="cards-item__date">
                     2 августа, 2019
@@ -193,11 +202,11 @@
                 <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
                 <div class="auth-form__subtitle">Пароль</div>
                 <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
-                <span class="auth-form__error auth-form__error_password invisible">Неправильная длина пароля</span>
+                <span class="auth-form__error auth-form__error_password invisible">Минимальная длина пароля 8 символов</span>
                 <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
                 <div class="auth-form__subtitle">Имя</div>
                 <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
-               <span class="auth-form__error auth-form__error_name invisible">Неправильная длина имени</span>
+               <span class="auth-form__error auth-form__error_name invisible">Длина имени должна быть от 2 до 30 символов</span>
                <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
                 <label class="auth-form__error auth-form__error_main"></label>
                 <button class="auth-form__button">Зарегистрироваться</button>
@@ -206,6 +215,6 @@
           </div>
         </div>
     </div>
-    <script src="main.9c6e0f34cf87a5f4e9b7.js"></script>
+    <script src="main.60763652ae015651845d.js"></script>
   </body>
 </html>
