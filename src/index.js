@@ -22,6 +22,7 @@ const buttonOptionalPopupLogin = document.querySelector(constants.buttonOptional
 const popupLogin = new AuthForm({api, element: document.querySelector(constants.popupLogin)});
 const popupRegistration = new RegistrationForm({api, element: document.querySelector(constants.popupRegistration)});
 const results = new ResultsContainer({
+  api,
   element: document.querySelector(constants.results),
   pageSize: 3,
   loggedIn: false

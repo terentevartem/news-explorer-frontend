@@ -38,6 +38,8 @@ const constants = {
   swiperWrapper: '.swiper-wrapper',
   swiperTemplate: '#commitTemplate',
   cardButtons: '.cards-item__save-button',
+  saveCardIcon: '.cards-item__save-icon',
+  savedCardIcon: '.cards-item__saved-icon',
   cardsTitle: '.cards-item__title',
   cardsDescription: '.cards-item__description',
   cardsAuthor: '.cards-item__author',

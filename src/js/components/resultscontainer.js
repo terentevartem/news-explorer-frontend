@@ -11,6 +11,7 @@ class ResultsContainer extends ArticlesContainer {
     this.showMoreButton.element.addEventListener('click', () => this.showMore());
     this.loading = new BaseComponent(this.element.querySelector(constants.preloaderContainer));
     this.notFound = new BaseComponent(this.element.querySelector(constants.notFoundContainer));
+    this.api = props.api;
   }
 
   doShowNews() {
@@ -18,7 +19,10 @@ class ResultsContainer extends ArticlesContainer {
     this.renderNews(0, this.pageSize);
   }
 
-  renderNews(startNumber, pageSize) {
+  async renderNews(startNumber, pageSize) {
+    this.savedLinks = await this.api.getArticles().then(articles => {
+      return articles.data.map(x => x.title)
+    });
     super.renderNews(startNumber, pageSize);
     this.currentIndex = startNumber + pageSize;
     this.currentIndex < this.news.length ? this.showMoreButton.show() : this.showMoreButton.hide();

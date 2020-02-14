@@ -35,18 +35,30 @@ class ArticlesContainer extends BaseComponent {
 
   createNewsCard(data) {
     const newCard = this.template.cloneNode(true).content;
+    let isSaved = false;
+    if (this.savedLinks) {
+      isSaved = this.savedLinks.includes(data.title);
+    }
     newCard.querySelector(constants.cardsTitle).textContent = data.title;
     newCard.querySelector(constants.cardsDescription).textContent = data.text;
     newCard.querySelector(constants.cardsAuthor).textContent = data.source;
     newCard.querySelector(constants.cardsItem).style.backgroundImage = `url(${data.image})`;
     newCard.querySelector(constants.cardsItemDate).textContent = `${data.date.getDate()} ${constants.month[data.date.getMonth()]} ${data.date.getFullYear()}`;
     const saveCardButton = newCard.querySelector(constants.cardButtons);
+    const saveCardIcon = newCard.querySelector(constants.saveCardIcon);
+    const savedCardIcon = newCard.querySelector(constants.savedCardIcon);
     if (this.loggedIn) {
       saveCardButton.classList.remove(constants.invisible);
+    }
+    if (isSaved) {
+      saveCardIcon.classList.add(constants.invisible);
+      savedCardIcon.classList.remove(constants.invisible);
     }
     saveCardButton.addEventListener('click', (event) => {
       event.preventDefault();
       this.onCardClicked(data);
+      saveCardIcon.classList.add(constants.invisible);
+      savedCardIcon.classList.remove(constants.invisible);
     });
     return newCard;
   }

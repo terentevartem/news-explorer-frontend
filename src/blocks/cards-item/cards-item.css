@@ -6,6 +6,7 @@
 @import url(./__container/cards-item__container.css);
 @import url(./__save-icon/cards-item__save-icon.css);
 @import url(./__delete-icon/cards-item__delete-icon.css);
+@import url(./__saved-icon/cards-item__saved-icon.css);
 @import url(./__button-container/cards-item__button-container.css);
 
 
