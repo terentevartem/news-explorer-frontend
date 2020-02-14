@@ -1,15 +1,16 @@
 import BaseComponent     from "./basecomponent";
 import ArticlesContainer from "./articlescontainer";
 import EVENTS            from "../events";
+import constants from "../constants";
 
 class ResultsContainer extends ArticlesContainer {
   constructor(props) {
     super(props);
-    this.showMoreButton = new BaseComponent(this.element.querySelector('.results__button'));
+    this.showMoreButton = new BaseComponent(this.element.querySelector(constants.resultsShowMoreButton));
     this.pageSize = props.pageSize;
     this.showMoreButton.element.addEventListener('click', () => this.showMore());
-    this.loading = new BaseComponent(this.element.querySelector('.preloader__container'));
-    this.notFound = new BaseComponent(this.element.querySelector('.not-found__container'));
+    this.loading = new BaseComponent(this.element.querySelector(constants.preloaderContainer));
+    this.notFound = new BaseComponent(this.element.querySelector(constants.notFoundContainer));
   }
 
   doShowNews() {

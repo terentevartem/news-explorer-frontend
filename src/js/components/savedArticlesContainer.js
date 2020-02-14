@@ -1,5 +1,6 @@
 import ArticlesContainer from "./articlescontainer";
 import EVENTS            from "../events";
+import constants from "../constants";
 
 class SavedArticlesContainer extends ArticlesContainer {
   constructor(props) {
@@ -9,8 +10,8 @@ class SavedArticlesContainer extends ArticlesContainer {
   }
 
   noNews() {
-    this.keywordsText.textContent = 'пока что у вас нет сохраненных статей';
-    this.countText.textContent = 'нет';
+    this.keywordsText.textContent = constants.keywordsTextNoArticles;
+    this.countText.textContent = constants.countTextNoArticles;
   }
 
   doShowNews() {
@@ -40,7 +41,7 @@ class SavedArticlesContainer extends ArticlesContainer {
     }
     const sortedKeywords = keywordsArray.sort((a, b) => b.count - a.count);
     const array = sortedKeywords.map(a => a.keyword);
-    if (array.length < 3) {
+    if (array.length < constants.numberOfKeywords) {
       return array.join(', ');
     }
     let words = array.splice(0, 2).join(', ');

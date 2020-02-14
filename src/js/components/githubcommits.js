@@ -1,4 +1,5 @@
 import BaseComponent from "./basecomponent";
+import constants from "../constants";
 
 class GitHubCommits extends BaseComponent {
   constructor(props) {
@@ -24,14 +25,12 @@ class GitHubCommits extends BaseComponent {
   }
 
   creatCommitCard(data) {
-    const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
-    'сентября', 'октября', 'ноября', 'декабря'];
     const newCard = this.template.cloneNode(true).content;
-    newCard.querySelector('.commit__date').textContent = `${data.date.getDate()} ${month[data.date.getMonth()]}, ${data.date.getFullYear()}`;;
-    newCard.querySelector('.commit__user-info-avatar').style.backgroundImage = `url(${data.avatar})`;
-    newCard.querySelector('.commit__user-info-name-name').textContent = data.name;
-    newCard.querySelector('.commit__user-info-mail').textContent = data.email;
-    newCard.querySelector('.commit__text').textContent = data.message;
+    newCard.querySelector(constants.commitDate).textContent = `${data.date.getDate()} ${constants.month[data.date.getMonth()]}, ${data.date.getFullYear()}`;;
+    newCard.querySelector(constants.commitUserAvatar).style.backgroundImage = `url(${data.avatar})`;
+    newCard.querySelector(constants.commitUserName).textContent = data.name;
+    newCard.querySelector(constants.commitUserMail).textContent = data.email;
+    newCard.querySelector(constants.commitText).textContent = data.message;
     return newCard;
   }
 }

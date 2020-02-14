@@ -1,11 +1,12 @@
 import BaseComponent from "./basecomponent";
+import constants     from "../constants";
 
 class ArticlesContainer extends BaseComponent {
   constructor(props) {
     super(props.element);
-    this.resultsContainer = new BaseComponent(this.element.querySelector('.results__container'));
-    this.template = document.querySelector('#news_card');
-    this.container = document.querySelector('.results__cards');
+    this.resultsContainer = new BaseComponent(this.element.querySelector(constants.resultsContainer));
+    this.template = document.querySelector(constants.resultsTemplate);
+    this.container = document.querySelector(constants.resultsCards);
     this.loggedIn = props.loggedIn;
   }
 
@@ -33,30 +34,20 @@ class ArticlesContainer extends BaseComponent {
   }
 
   createNewsCard(data) {
-    const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
-      'сентября', 'октября', 'ноября', 'декабря'];
     const newCard = this.template.cloneNode(true).content;
-    newCard.querySelector('.cards-item__title').textContent = data.title;
-    newCard.querySelector('.cards-item__description').textContent = data.text;
-    newCard.querySelector('.cards-item__author').textContent = data.source;
-    newCard.querySelector('.cards-item').style.backgroundImage = `url(${data.image})`;
-    newCard.querySelector('.cards-item__date').textContent = `${data.date.getDate()} ${month[data.date.getMonth()]} ${data.date.getFullYear()}`;
-    const saveCardButton = newCard.querySelector('.cards-item__save-button');
+    newCard.querySelector(constants.cardsTitle).textContent = data.title;
+    newCard.querySelector(constants.cardsDescription).textContent = data.text;
+    newCard.querySelector(constants.cardsAuthor).textContent = data.source;
+    newCard.querySelector(constants.cardsItem).style.backgroundImage = `url(${data.image})`;
+    newCard.querySelector(constants.cardsItemDate).textContent = `${data.date.getDate()} ${constants.month[data.date.getMonth()]} ${data.date.getFullYear()}`;
+    const saveCardButton = newCard.querySelector(constants.cardButtons);
     if (this.loggedIn) {
-      saveCardButton.classList.remove('invisible');
+      saveCardButton.classList.remove(constants.invisible);
     }
     saveCardButton.addEventListener('click', (event) => {
       event.preventDefault();
       this.onCardClicked(data);
     });
-    /*
-    newCard.querySelector(this.card.node).href = data.link;
-    */
-    // eslint-disable-next-line max-len
-    /* if (this._saved()) {
-       newCard.querySelector(this.card.icon.node).classList.add(this.card.icon.saved);
-       newCard.querySelector(this.card.icon.node).setAttribute('cardID', this._position);
-     }*/
     return newCard;
   }
 
@@ -74,9 +65,9 @@ class ArticlesContainer extends BaseComponent {
   render(props) {
     if (props.isLoggedIn) {
       this.loggedIn = true;
-      const cardButtons = this.container.querySelectorAll('.cards-item__save-button');
+      const cardButtons = this.container.querySelectorAll(constants.cardButtons);
       for (let cardSaveButton of cardButtons) {
-        cardSaveButton.classList.remove('invisible');
+        cardSaveButton.classList.remove(constants.invisible);
       }
     }
   }

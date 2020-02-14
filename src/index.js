@@ -11,23 +11,24 @@ import NewsAPI          from "./js/api/newsapi";
 import SearchForm       from "./js/components/searchform";
 import ResultsContainer from "./js/components/resultscontainer";
 import AuthManager      from "./js/components/authmanager";
+import contains from "validator/es/lib/contains";
 
 const api = new MainApi(constants.mainApi);
 const newsApi = new NewsAPI({url: constants.newsUrl});
 
-const header = new Header({element: document.querySelector('.header')});
-const buttonOptionalPopupRegistration = document.querySelector('.auth-form__optional-link-registration');
-const buttonOptionalPopupLogin = document.querySelector('.auth-form__optional-link-login');
-const popupLogin = new AuthForm({api, element: document.querySelector('.popup-login')});
-const popupRegistration = new RegistrationForm({api, element: document.querySelector('.popup-registration')});
+const header = new Header({element: document.querySelector(constants.header)});
+const buttonOptionalPopupRegistration = document.querySelector(constants.buttonOptionalPopupRegistration);
+const buttonOptionalPopupLogin = document.querySelector(constants.buttonOptionalPopupLogin);
+const popupLogin = new AuthForm({api, element: document.querySelector(constants.popupLogin)});
+const popupRegistration = new RegistrationForm({api, element: document.querySelector(constants.popupRegistration)});
 const results = new ResultsContainer({
-  element: document.querySelector('.results'),
+  element: document.querySelector(constants.results),
   pageSize: 3,
   loggedIn: false
 });
 const searchForm = new SearchForm({
   api: newsApi,
-  element: document.querySelector('.header__search'),
+  element: document.querySelector(constants.searchForm),
   timeSpan: constants.timeSpan,
   results: results
 });
