@@ -6,7 +6,6 @@ class SearchForm extends BaseComponent {
     this.timeSpan = props.timeSpan;
     this.api = props.api;
     this.results = props.results;
-
     this.form = this.element;
     this.form.onsubmit = this.search.bind(this);
   }

@@ -1,3 +1,5 @@
+import constants from "../constants";
+
 class GitHubAPI {
   constructor(props) {
     this.url = props.url;
@@ -8,7 +10,7 @@ class GitHubAPI {
     return fetch(this.url)
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`Не удалось загрузить коммиты`);
+          throw new Error(constants.noСommitsText);
         }
         return res.json()
       })

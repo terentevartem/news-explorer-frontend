@@ -9,7 +9,6 @@ class RegistrationForm extends Popup {
     this.errorField = this.element.querySelector(constants.authFormError);
     this.inputs = this.element.querySelectorAll(constants.authFormInput);
     this.submitButton = this.element.querySelector(constants.authFormSubmitButton);
-
     this.form = this.element.querySelector(constants.authForm);
     this.form.onsubmit = this.signUp.bind(this);
     this.nameInput = this.element.querySelector(constants.authFormInputName);

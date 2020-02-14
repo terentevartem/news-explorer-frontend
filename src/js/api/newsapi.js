@@ -1,3 +1,5 @@
+import constants from "../constants";
+
 class NewsAPI {
   constructor(props) {
     this.url = props.url;
@@ -12,7 +14,7 @@ class NewsAPI {
     return fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw new Error('Ошибка запроса новостей')
+          throw new Error(constants.errorNews)
         }
         return res.json();
       })

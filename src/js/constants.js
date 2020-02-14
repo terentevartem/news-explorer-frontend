@@ -99,6 +99,8 @@ const constants = {
   slidesPerGroup767: 2,
   slidesPerView1099: 3,
   spaceBetween1099: 10,
+  noСommitsText: 'Не удалось загрузить коммиты',
+  errorNews: 'Ошибка запроса новостей'
 };
 
 export default constants;

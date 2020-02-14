@@ -19,12 +19,6 @@ class ArticlesContainer extends BaseComponent {
     }
   }
 
-  doShowNews() {
-  }
-
-  noNews() {
-  }
-
   renderNews(startNumber, pageSize) {
     const cardsContainer = document.createDocumentFragment();
     for (let i = startNumber; i < Math.min(startNumber + pageSize, this.news.length); i++) {
@@ -61,10 +55,6 @@ class ArticlesContainer extends BaseComponent {
       savedCardIcon.classList.remove(constants.invisible);
     });
     return newCard;
-  }
-
-  onCardClicked(data) {
-
   }
 
   clear() {
