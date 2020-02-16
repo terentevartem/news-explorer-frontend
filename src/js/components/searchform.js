@@ -10,9 +10,9 @@ class SearchForm extends BaseComponent {
     this.results = props.results;
     this.form = this.element;
     this.form.onsubmit = this.search.bind(this);
-    this.inputs = this.element.querySelectorAll('.header__search-input');
-    this.searchInputError = document.querySelector('.header__error');
-    this.searchError = this.element.querySelector('.header__search-input');
+    this.inputs = this.element.querySelectorAll(constants.searchError);
+    this.searchInputError = document.querySelector(constants.searchInputError);
+    this.searchError = this.element.querySelector(constants.searchError);
     this.searchError.addEventListener('input', this.validateSearch.bind(this));
   }
 
@@ -46,7 +46,7 @@ class SearchForm extends BaseComponent {
 
   validateSearch(event) {
     const input = event.target;
-    const isValid = validator.isLength(input.value, {min: 1, max: 30});
+    const isValid = validator.isLength(input.value, {min: constants.validateSearchMinLength, max: constants.validateSearchMaxLength});
     if (isValid) {
       input.classList.remove(constants.authFormInputInvalid);
       this.searchInputError.classList.add(constants.invisible);
