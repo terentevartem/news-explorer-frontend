@@ -8,10 +8,10 @@ const constants = {
     maxCommits: 20
   },
   mainApi: {
-    // domain: 'api.news-explorer.ga',
-    // protocol: 'https://',
-    domain: 'localhost:3000',
-    protocol: 'http://',
+    domain: 'api.news-explorer.ga',
+    protocol: 'https://',
+    // domain: 'localhost:3000',
+    // protocol: 'http://',
     signIn: '/signin',
     signUp: '/signup',
     articles: '/articles',
