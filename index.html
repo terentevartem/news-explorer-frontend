@@ -9,7 +9,7 @@
     <meta name="author" content="Артем Терентьев">
     <title>NewsExplorer</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="css/style.ef297cc993d10f59885a.css">
+    <link rel="stylesheet" href="css/style.b7616fc9198f053e4fa7.css">
   </head>
   <body>
     <div class="page">
@@ -82,6 +82,7 @@
                 Искать
               </button>
             </form>
+            <span class="header__error invisible">Это обязательное поле</span>
           </div>
       </header>
       <div class="results">
@@ -138,6 +139,16 @@
             К сожалению по вашему запросу<br>ничего не найдено.
           </h5>
         </div>
+        <div class="not-found__container not-found__container_error invisible">
+          <div class="not-found__image">
+          </div>
+          <h4 class="not-found__title">
+            Ошибка на сервере
+          </h4>
+          <h5 class="not-found__description not-found__description_error">
+            Описание ошибки
+          </h5>
+        </div>
       </div>
       <section class="about">
           <img class="about__avatar" src="./images/image-03.png" alt="Фотография автора">
@@ -179,11 +190,15 @@
           <div class="popup-auth__content">
             <img src="./images/close-mid.png" alt="" class="popup-auth__button-close button_close">
             <h3 class="popup-auth__title">Вход</h3>
-            <form class="popup-auth__auth-form auth-form" name="login">
+            <form class="popup-auth__auth-form auth-form" onsubmit="javascript:console.log('submit');" name="login">
                 <div class="auth-form__subtitle">Email</div>
                 <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+                <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+                <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
                 <div class="auth-form__subtitle">Пароль</div>
-                <input type="text" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <input type="password" name="password"  class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+                <span class="auth-form__error auth-form__error_password invisible">Минимальная длина пароля 8 символов</span>
+                <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
                 <span class="auth-form__error auth-form__error_main"></span>
                 <button class="auth-form__button">Войти</button>
                 <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
@@ -215,6 +230,6 @@
           </div>
         </div>
     </div>
-    <script src="main.7ce93d1b434470919deb.js"></script>
+    <script src="main.3c08b57afa61d9e6f3db.js"></script>
   </body>
 </html>
