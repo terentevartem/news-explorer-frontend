@@ -1,5 +1,6 @@
 import BaseComponent from "./basecomponent";
 import constants     from "../constants";
+import EVENTS from "../events";
 
 class ArticlesContainer extends BaseComponent {
   constructor(props) {
@@ -8,6 +9,7 @@ class ArticlesContainer extends BaseComponent {
     this.template = document.querySelector(constants.resultsTemplate);
     this.container = document.querySelector(constants.resultsCards);
     this.loggedIn = props.loggedIn;
+    this.errorFieldNews = this.element.querySelector('.not-found__description_error');
   }
 
   showNews(news) {
@@ -17,6 +19,11 @@ class ArticlesContainer extends BaseComponent {
     } else {
       this.doShowNews();
     }
+  }
+
+  showErrorsNews(message) {
+    this.errorNews();
+    this.errorFieldNews.textContent = message;
   }
 
   renderNews(startNumber, pageSize) {
@@ -48,11 +55,15 @@ class ArticlesContainer extends BaseComponent {
       saveCardIcon.classList.add(constants.invisible);
       savedCardIcon.classList.remove(constants.invisible);
     }
+    document.addEventListener(EVENTS.savedNews, event => {
+      if (event.detail.title === data.title) {
+         saveCardIcon.classList.add(constants.invisible);
+      savedCardIcon.classList.remove(constants.invisible);
+      }
+    })
     saveCardButton.addEventListener('click', (event) => {
       event.preventDefault();
       this.onCardClicked(data);
-      saveCardIcon.classList.add(constants.invisible);
-      savedCardIcon.classList.remove(constants.invisible);
     });
     return newCard;
   }

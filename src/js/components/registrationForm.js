@@ -28,10 +28,33 @@ class RegistrationForm extends Popup {
   async signUp(event) {
     event.preventDefault();
     const data = {};
+
+    let formIsValid = true;
+
+
+
     for (let input of this.inputs) {
+      if (input.name == 'email') {
+        if (!this.validateEmail({ target: input })) {
+          formIsValid = false;
+        }
+      }
+      if (input.name == 'password' ) {
+        if (!this.validatePassword({ target: input }) && formIsValid) {
+          formIsValid = false
+        }
+      }
+      if (input.name == 'name' ) {
+        if (!this.validateName({ target: input }) && formIsValid) {
+          formIsValid = false
+        }
+      }
       data[input.name] = input.value;
     }
-    let result = await this.api.signUp(data).catch(error => {
+    formIsValid && this.api.signUp(data).then(() => {
+      this.errorField.textContent = '';
+      this.hide();
+    }).catch(error => {
       this.errorField.textContent = error.message;
     });
 
@@ -46,7 +69,8 @@ class RegistrationForm extends Popup {
 
   validateEmail(event) {
     const input = event.target;
-    if (validator.isEmail(input.value)) {
+    const isValid = validator.isEmail(input.value);
+    if (isValid) {
       input.classList.remove(constants.authFormInputInvalid);
       this.emailError.classList.add(constants.invisible);
       this.emailRequired.classList.add(constants.invisible);
@@ -60,12 +84,13 @@ class RegistrationForm extends Popup {
         this.emailRequired.classList.add(constants.invisible);
       }
     }
-    this.validateForm();
+    return isValid;
   }
 
   validateName(event) {
     const input = event.target;
-    if (validator.isLength(input.value, {min: constants.validateNameMinLength, max: constants.validateNameMaxLength})) {
+    const isValid = validator.isLength(input.value, {min: constants.validateNameMinLength, max: constants.validateNameMaxLength});
+    if (isValid) {
       input.classList.remove(constants.authFormInputInvalid);
       this.nameError.classList.add(constants.invisible);
       this.nameRequired.classList.add(constants.invisible);
@@ -80,11 +105,13 @@ class RegistrationForm extends Popup {
       input.classList.add(constants.authFormInputInvalid);
     }
     this.validateForm();
+    return isValid;
   }
 
   validatePassword(event) {
     const input = event.target;
-    if (validator.isLength(input.value, {min: constants.validatePasswordMinLength, max: constants.validatePasswordMaxLength})) {
+    const isValid = validator.isLength(input.value, {min: constants.validatePasswordMinLength, max: constants.validatePasswordMaxLength});
+    if (isValid) {
       input.classList.remove(constants.authFormInputInvalid);
       this.passwordError.classList.add(constants.invisible);
       this.passwordRequired.classList.add(constants.invisible);
@@ -99,14 +126,17 @@ class RegistrationForm extends Popup {
       input.classList.add(constants.authFormInputInvalid);
     }
     this.validateForm();
+    return isValid;
   }
 
   validateForm() {
     const invalidInputs = this.element.querySelectorAll(constants.authFormInputInvalidAll);
     if (invalidInputs.length > 0) {
-      this.submitButton.classList.add(constants.authFormInputInvalid);
+      this.submitButton.classList.add(constants.authFormButtonInvalid);
+      this.submitButton.disabled = true;
     } else {
-      this.submitButton.classList.remove(constants.authFormInputInvalid);
+      this.submitButton.classList.remove(constants.authFormButtonInvalid);
+      this.submitButton.disabled = false;
     }
   }
 }

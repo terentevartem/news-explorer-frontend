@@ -1,6 +1,5 @@
-@import url(./_invalid/auth-form__button_invalid.css);
-
-.auth-form__button {
+.auth-form__button_invalid {
+  display: block;
   background-color: transparent;
   width: 100%;
   height: 64px;
@@ -9,12 +8,9 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  display: block;
   cursor: pointer;
-  background: #2F71E5;
-  /* color: #B6BCBF; */
-  /* background: #E6E8EB; */
-  color: #FFFFFF;
+  color: #B6BCBF;
+  background: #E6E8EB;
   border-radius: 100px;
   margin-top: 8px;
 }

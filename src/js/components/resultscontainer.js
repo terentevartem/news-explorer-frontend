@@ -11,6 +11,7 @@ class ResultsContainer extends ArticlesContainer {
     this.showMoreButton.element.addEventListener('click', () => this.showMore());
     this.loading = new BaseComponent(this.element.querySelector(constants.preloaderContainer));
     this.notFound = new BaseComponent(this.element.querySelector(constants.notFoundContainer));
+    this.notFoundError = new BaseComponent(this.element.querySelector(constants.notFoundContainerError));
     this.api = props.api;
     this.loggedIn = props.loggedIn;
   }
@@ -35,6 +36,10 @@ class ResultsContainer extends ArticlesContainer {
     this.notFound.show();
   }
 
+  errorNews() {
+    this.notFoundError.show();
+  }
+
   showLoading() {
     this.loading.show();
   }
@@ -48,6 +53,7 @@ class ResultsContainer extends ArticlesContainer {
     this.currentIndex = 0;
     this.showMoreButton.hide();
     this.notFound.hide();
+    this.notFoundError.hide();
   }
 
   onCardClicked(data) {

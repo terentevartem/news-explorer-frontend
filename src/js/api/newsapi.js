@@ -31,9 +31,7 @@ class NewsAPI {
           }
         });
       })
-      .catch((err) => {
-        throw new Error(err.message);
-      })
+      // .catch((err) => )
   }
 }
 

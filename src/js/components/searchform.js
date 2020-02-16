@@ -14,9 +14,15 @@ class SearchForm extends BaseComponent {
     event.preventDefault();
     this.results.clear();
     this.results.showLoading();
-    const news = await this.api.getNews(this.form.queryString.value, this.timeSpan);
-    this.results.hideLoading();
-    this.results.showNews(news);
+    const news = await this.api.getNews(this.form.queryString.value, this.timeSpan)
+      .then(news => {
+        this.results.hideLoading();
+        this.results.showNews(news);
+      }).catch(err => {
+        this.results.hideLoading();
+        const reason = err.message;
+        this.results.showErrorsNews(reason);
+      });
   }
 }
 

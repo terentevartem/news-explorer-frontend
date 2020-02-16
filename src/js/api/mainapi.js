@@ -15,7 +15,8 @@ class MainApi {
     return fetch(url, requestData)
       .then(async (res) => {
         if (!res.ok) {
-          throw new Error(res.statusText)
+          const message = await res.json().then(x => x.message);
+          throw new Error(message);
         }
         return await res.json();
       })
@@ -87,7 +88,7 @@ class MainApi {
   }
 
   async createArticle(data) {
-    await this.request(this.getUrl(this.props.articles), this.getRequestData(data));
+    return await this.request(this.getUrl(this.props.articles), this.getRequestData(data));
   }
 
   removeArticle(id) {

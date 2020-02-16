@@ -4,6 +4,7 @@ const EVENTS = {
   authChanged: 'authChanged',
   saveNewsData: 'saveNewsData',
   deleteNewsData: 'deleteNewsData',
+  savedNews: 'savedNews',
 };
 
 export default EVENTS;

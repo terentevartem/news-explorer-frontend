@@ -50,8 +50,11 @@ const authManager = new AuthManager({
 });
 authManager.init();
 
-document.addEventListener(EVENTS.saveNewsData, (customEvent) => {
-  api.createArticle(customEvent.detail);
+document.addEventListener(EVENTS.saveNewsData, async (customEvent) => {
+  const result = await api.createArticle(customEvent.detail);
+  if (result && result.data) {
+    document.dispatchEvent(new CustomEvent(EVENTS.savedNews, {detail: result.data}));
+  }
 });
 
 
