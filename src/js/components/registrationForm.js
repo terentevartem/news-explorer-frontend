@@ -28,11 +28,7 @@ class RegistrationForm extends Popup {
   async signUp(event) {
     event.preventDefault();
     const data = {};
-
     let formIsValid = true;
-
-
-
     for (let input of this.inputs) {
       if (input.name == 'email') {
         if (!this.validateEmail({ target: input })) {

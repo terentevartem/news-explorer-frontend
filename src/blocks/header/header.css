@@ -5,6 +5,7 @@
 @import url(./__search/header__search.css);
 @import url(./__search-button/search__button.css);
 @import url(./__search-input/search__input.css);
+@import url(./__error/header__error.css);
 
 .header-main {
   height: 576px;

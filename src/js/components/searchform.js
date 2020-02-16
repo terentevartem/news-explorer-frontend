@@ -1,4 +1,6 @@
 import BaseComponent from "./basecomponent";
+import constants from '../constants';
+import validator from "validator/es";
 
 class SearchForm extends BaseComponent {
   constructor(props) {
@@ -8,13 +10,30 @@ class SearchForm extends BaseComponent {
     this.results = props.results;
     this.form = this.element;
     this.form.onsubmit = this.search.bind(this);
+    this.inputs = this.element.querySelectorAll('.header__search-input');
+    this.searchInputError = document.querySelector('.header__error');
+    this.searchError = this.element.querySelector('.header__search-input');
+    this.searchError.addEventListener('input', this.validateSearch.bind(this));
   }
 
   async search(event) {
     event.preventDefault();
-    this.results.clear();
-    this.results.showLoading();
-    const news = await this.api.getNews(this.form.queryString.value, this.timeSpan)
+    const data = {};
+
+    let formIsValid = true;
+    for (let input of this.inputs) {
+      if (input.name == 'queryString') {
+        if (!this.validateSearch({ target: input })) {
+          formIsValid = false;
+        }
+      }
+      data[input.name] = input.value;
+    }
+
+    formIsValid && this.results.clear();
+    formIsValid && this.results.showLoading();
+
+    formIsValid && this.api.getNews(this.form.queryString.value, this.timeSpan)
       .then(news => {
         this.results.hideLoading();
         this.results.showNews(news);
@@ -23,6 +42,23 @@ class SearchForm extends BaseComponent {
         const reason = err.message;
         this.results.showErrorsNews(reason);
       });
+  }
+
+  validateSearch(event) {
+    const input = event.target;
+    const isValid = validator.isLength(input.value, {min: 1, max: 30});
+    if (isValid) {
+      input.classList.remove(constants.authFormInputInvalid);
+      this.searchInputError.classList.add(constants.invisible);
+    } else {
+      if (input.value.length === 0) {
+        this.searchInputError.classList.remove(constants.invisible);
+      } else {
+        this.searchInputError.classList.add(constants.invisible);
+      }
+      input.classList.add(constants.authFormInputInvalid);
+    }
+    return isValid;
   }
 }
 
