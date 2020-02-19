@@ -1,0 +1,16 @@
+.auth-form__button_invalid {
+  display: block;
+  background-color: transparent;
+  width: 100%;
+  height: 64px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #B6BCBF;
+  background: #E6E8EB;
+  border-radius: 100px;
+  margin-top: 8px;
+}

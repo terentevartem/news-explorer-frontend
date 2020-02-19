@@ -1,0 +1,23 @@
+.cards-item__saved-icon {
+  height: 24px;
+  width: 24px;
+  background-image: url(../../../images/saved_icon.svg);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .cards-item__saved-icon {
+    background-image: url(../../../images/saved_icon.svg);
+    margin: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-item__saved-icon {
+    background-image: url(../../../images/saved_icon.svg);
+    margin: auto;
+    box-sizing: border-box;
+  }
+}

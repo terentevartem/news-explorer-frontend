@@ -6,6 +6,11 @@
   font-size: 16px;
   line-height: 22px;
   color: #1A1B22;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {

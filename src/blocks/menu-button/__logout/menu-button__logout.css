@@ -1,0 +1,17 @@
+@import url(./_icon/menu-button__logout_icon.css);
+@import url(./_white/menu-button__logout_white.css);
+@import url(./_icon-white/menu-button__logout_icon-white.css);
+
+.menu-button__logout {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 13px;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 178px;
+  margin-left: 32px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

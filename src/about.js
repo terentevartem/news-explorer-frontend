@@ -1,63 +1,84 @@
 import "./pages/index.css";
 "use strict";
-import Swiper from 'swiper';
+import Swiper        from 'swiper';
+import constants     from "./js/constants";
+import GitHubAPI     from "./js/api/githubapi";
+import GitHubCommits from "./js/components/githubcommits";
+import AuthManager   from "./js/components/authmanager";
+import AuthForm         from './js/components/authform';
+import RegistrationForm from './js/components/registrationForm';
+import Header                 from "./js/components/header";
+import MainApi                from "./js/api/mainapi";
+import EVENTS                 from "./js/events";
 
-const menuMobileButton = document.querySelector('.menu__mobile-button');
-const menuMobileButtonClose = document.querySelector('.mobile-popup__button-close');
+const api = new MainApi(constants.mainApi);
+const header = new Header({element: document.querySelector(constants.header)});
+const buttonOptionalPopupRegistration = document.querySelector(constants.buttonOptionalPopupRegistration);
+const buttonOptionalPopupLogin = document.querySelector(constants.buttonOptionalPopupLogin);
+const popupLogin = new AuthForm({api, element: document.querySelector(constants.popupLogin)});
+const popupRegistration = new RegistrationForm({api, element: document.querySelector(constants.popupRegistration)});
 
-class Popup {
-  constructor(popupElement) {
-    this.popupElement = popupElement;
-  }
 
-  open() {
-    this.popupElement.classList.add('popup_is-opened');
-  }
-
-  close() {
-    this.popupElement.classList.remove('popup_is-opened');
-  }
-}
-
-const popupMenuMobile = new Popup(document.querySelector('.menu__mobile'));
-
-menuMobileButton.addEventListener('click', function () {
-  popupMenuMobile.open();
+buttonOptionalPopupRegistration.addEventListener('click', function () {
+  popupRegistration.show();
+  popupLogin.hide();
 });
 
-menuMobileButtonClose.addEventListener('click', function () {
-  popupMenuMobile.close();
+buttonOptionalPopupLogin.addEventListener('click', function () {
+  popupLogin.show();
+  popupRegistration.hide();
 });
 
-const swiper = new Swiper('.swiper__container', {
+const authManager = new AuthManager({
+  header, api
+});
+authManager.init();
+
+const swiper = new Swiper(constants.swiperContainer, {
   updateOnWindowResize: true,
-  slidesPerView: 3,
-  spaceBetween: 10,
-  slidesPerGroup: 3,
+  slidesPerView: constants.slidesPerViewDefault,
+  spaceBetween: constants.spaceBetweenDefault,
+  slidesPerGroup: constants.slidesPerGroupDefault,
   loop: false,
   loopFillGroupWithBlank: false,
   pagination: {
-    el: '.swiper-pagination',
+    el: constants.swiperPagination,
     clickable: true,
   },
   breakpoints: {
     200: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 10,
+      slidesPerView: constants.slidesPerView200,
+      slidesPerGroup: constants.slidesPerGroup200,
+      spaceBetween: constants.spaceBetween200,
     },
     767: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-      slidesPerGroup: 2,
+      slidesPerView: constants.slidesPerView767,
+      spaceBetween: constants.spaceBetween767,
+      slidesPerGroup: constants.slidesPerGroup767,
     },
     1099: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+      slidesPerView: constants.slidesPerView1099,
+      spaceBetween: constants.spaceBetween1099,
     },
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: constants.swiperNavigationNextEl,
+    prevEl: constants.swiperNavigationPrevEl,
   },
-})
+});
+
+
+const gitHubAPI = new GitHubAPI({
+  url: constants.gitHub.url,
+  maxCommits: constants.gitHub.maxCommits
+});
+
+const gitHubCommits = new GitHubCommits({
+  api: gitHubAPI,
+  element: document.querySelector(constants.swiper),
+  swiperUpdate: swiper.update.bind(swiper),
+  template: document.querySelector(constants.swiperTemplate),
+  container: document.querySelector(constants.swiperWrapper),
+});
+
+gitHubCommits.render();

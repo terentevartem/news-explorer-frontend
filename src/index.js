@@ -1,56 +1,60 @@
-import "./pages/index.css";
 "use strict";
+import "./pages/index.css";
 import '../node_modules/swiper/css/swiper.min.css';
+import Header           from './js/components/header';
+import AuthForm         from './js/components/authForm';
+import RegistrationForm from './js/components/registrationForm';
+import MainApi          from './js/api/mainapi';
+import EVENTS           from "./js/events";
+import constants        from "./js/constants";
+import NewsAPI          from "./js/api/newsapi";
+import SearchForm       from "./js/components/searchform";
+import ResultsContainer from "./js/components/resultscontainer";
+import AuthManager      from "./js/components/authmanager";
+import contains from "validator/es/lib/contains";
 
-const buttonPopupLogin = document.querySelector('.menu-button__authorization');
-const buttonOptionalPopupRegistration = document.querySelector('.auth-form__optional-link-registration');
-const buttonOptionalPopupLogin = document.querySelector('.auth-form__optional-link-login');
-const closeButtonPopup = document.querySelector('.popup-auth__button-close');
-const menuMobileButton = document.querySelector('.menu__mobile-button');
-const menuMobileButtonClose = document.querySelector('.mobile-popup__button-close');
+const api = new MainApi(constants.mainApi);
+const newsApi = new NewsAPI({url: constants.newsUrl});
 
-class Popup {
-  constructor(popupElement) {
-    this.popupElement = popupElement;
-  }
-
-  open() {
-    this.popupElement.classList.add('popup_is-opened');
-  }
-
-  close() {
-    this.popupElement.classList.remove('popup_is-opened');
-  }
-}
-
-const popupLogin = new Popup(document.querySelector('.popup-login'));
-const popupRegistration = new Popup(document.querySelector('.popup-registration'));
-const popupMenuMobile = new Popup(document.querySelector('.menu__mobile'));
-
-buttonPopupLogin.addEventListener('click', function () {
-  popupLogin.open();
+const header = new Header({element: document.querySelector(constants.header)});
+const buttonOptionalPopupRegistration = document.querySelector(constants.buttonOptionalPopupRegistration);
+const buttonOptionalPopupLogin = document.querySelector(constants.buttonOptionalPopupLogin);
+const popupLogin = new AuthForm({api, element: document.querySelector(constants.popupLogin)});
+const popupRegistration = new RegistrationForm({api, element: document.querySelector(constants.popupRegistration)});
+const results = new ResultsContainer({
+  api,
+  element: document.querySelector(constants.results),
+  pageSize: 3,
+  loggedIn: false
+});
+const searchForm = new SearchForm({
+  api: newsApi,
+  element: document.querySelector(constants.searchForm),
+  timeSpan: constants.timeSpan,
+  results: results
 });
 
-closeButtonPopup.addEventListener('click', function () {
-  popupLogin.close();
-  popupRegistration.close();
-});
 
 buttonOptionalPopupRegistration.addEventListener('click', function () {
-  popupRegistration.open();
-  popupLogin.close();
+  popupRegistration.show();
+  popupLogin.hide();
 });
 
 buttonOptionalPopupLogin.addEventListener('click', function () {
-  popupLogin.open();
-  popupRegistration.close();
+  popupLogin.show();
+  popupRegistration.hide();
 });
 
-menuMobileButton.addEventListener('click', function () {
-  popupMenuMobile.open();
+const authManager = new AuthManager({
+  header, api, results
+});
+authManager.init();
+
+document.addEventListener(EVENTS.saveNewsData, async (customEvent) => {
+  const result = await api.createArticle(customEvent.detail);
+  if (result && result.data) {
+    document.dispatchEvent(new CustomEvent(EVENTS.savedNews, {detail: result.data}));
+  }
 });
 
-menuMobileButtonClose.addEventListener('click', function () {
-  popupMenuMobile.close();
-});
 

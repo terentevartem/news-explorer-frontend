@@ -1,4 +1,4 @@
-.popup-registration.popup_is-opened {
+.popup-registration {
   display: flex;
   z-index: 5;
 }

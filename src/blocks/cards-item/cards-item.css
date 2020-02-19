@@ -5,6 +5,9 @@
 @import url(./__title/cards-item__title.css);
 @import url(./__container/cards-item__container.css);
 @import url(./__save-icon/cards-item__save-icon.css);
+@import url(./__delete-icon/cards-item__delete-icon.css);
+@import url(./__saved-icon/cards-item__saved-icon.css);
+@import url(./__button-container/cards-item__button-container.css);
 
 
 .cards-item {
@@ -13,6 +16,7 @@
   background: #FFF;
   border-radius: 16px;
   background-image: url(../../images/image_08.png);
+  background-size: 400px 272px;
   background-repeat: no-repeat;
 }
 
@@ -20,7 +24,7 @@
   .cards-item {
     width: 224px;
     height: 420px;
-    background-size: 224px;
+    background-size: 224px 150px;
   }
 }
 
@@ -28,7 +32,7 @@
   .cards-item {
     width: 288px;
     height: 440px;
-    background-size: 288px;
+    background-size: 288px 196px;
     margin: auto;
   }
 }

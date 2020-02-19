@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="header-page-saved-news">
+      <header class="header header-page-saved-news">
           <div class="menu">
             <a href="./index.html" class="menu__logo menu__logo_black">
               NewsExplorer
@@ -28,31 +28,42 @@
               <a href="./saved-news.html" class="menu-button__saved-news menu-button__saved-news_selected menu-button__saved-news_black">
                 Сохраненные статьи
               </a>
-              <div class="menu-button__authorization">
-                Грета
-                <div class="menu-button__authorization_logout-icon">
+              <div class="menu-button__authorization menu-button__authorization_black invisible">
+                Авторизоваться
+              </div>
+              <div class="menu-button__logout">
+                <span class="user_name">Грета</span>
+                <div class="menu-button__logout_icon">
                 </div>
               </div>
             </div>
             <div class="menu__mobile-button menu__mobile-button_black">
             </div>
-            <div class="menu__mobile mobile-popup">
+            <div class="menu__mobile mobile-popup invisible">
               <div class="mobile-popup__content">
                 <div class="mobile-popup__header">
                   <a href="./index.html" class="menu__logo menu__logo_white">
                     NewsExplorer
                   </a>
-                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close">
+                  <img src="<%= require('./images/close-mid.png').default%>" alt="" class="mobile-popup__button-close button_close">
                 </div>
                 <div class="mobile-popup__buttons">
-                  <a href="./index.html" class="mobile-popup__button">
+                  <a href="./index.html" class="mobile-popup__button mobile-popup__button_main">
                     Главная
                   </a>
-                  <a href="./about.html" class="mobile-popup__button">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_about">
                     О проекте
                   </a>
-                  <div class="mobile-popup__button-auth">
+                  <a href="./about.html" class="mobile-popup__button mobile-popup__button_saved">
+                    Сохраненные статьи
+                  </a>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_auth invisible">
                     Авторизоваться
+                  </div>
+                  <div class="mobile-popup__button-auth mobile-popup__button-auth_logout invisible">
+                    <span class="user_name">Грета</span>
+                    <div class="mobile-popup__logout_icon-white">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -62,81 +73,22 @@
             Сохранённые статьи
           </div>
           <div class="header-page-saved-news__title">
-            Грета, у вас 5<br> сохранённых статей
+            <span class="user_name">Грета</span>, у вас <span class="header-page-saved-news__title-count"></span> сохранённых статей
           </div>
           <div class="header-page-saved-news__keywords">
-            По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b>
+            По ключевым словам: <span class="header-page-saved-news__keywords-words"></span>
           </div>
       </header>
       <div class="results">
-        <div class="results__container_page-saved-news">
+        <div class="results__container results__container_page-saved-news">
           <div class="results__cards">
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-              <div class="cards-item__container">
-                <div class="cards-item__save-button save-button">
-                  <div class="cards-item__save-icon">
-                  </div>
-                </div>
-                <div class="cards-item__date">
-                  2 августа, 2019
-                </div>
-                <div class="cards-item__title">
-                  Национальное достояние – парки
-                </div>
-                <div class="cards-item__description">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                </div>
-                <div class="cards-item__author">
-                  Лента.ру
-                </div>
-              </div>
-            </div>
-            <div class="cards-item">
-                <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
-                    <div class="cards-item__save-icon">
-                    </div>
-                  </div>
-                  <div class="cards-item__date">
-                    2 августа, 2019
-                  </div>
-                  <div class="cards-item__title">
-                    Национальное достояние – парки
-                  </div>
-                  <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </div>
-                  <div class="cards-item__author">
-                    Лента.ру
-                  </div>
-                </div>
-              </div>
+            <template id="news_card">
               <div class="cards-item">
                 <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
-                    <div class="cards-item__save-icon">
+                  <button class="cards-item__save-button invisible">
+                    <div class="cards-item__delete-icon">
                     </div>
-                  </div>
+                  </button>
                   <div class="cards-item__date">
                     2 августа, 2019
                   </div>
@@ -144,33 +96,15 @@
                     Национальное достояние – парки
                   </div>
                   <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система
+                    национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
                   </div>
                   <div class="cards-item__author">
                     Лента.ру
                   </div>
                 </div>
               </div>
-              <div class="cards-item">
-                <div class="cards-item__container">
-                  <div class="cards-item__save-button save-button">
-                    <div class="cards-item__save-icon">
-                    </div>
-                  </div>
-                  <div class="cards-item__date">
-                    2 августа, 2019
-                  </div>
-                  <div class="cards-item__title">
-                    Национальное достояние – парки
-                  </div>
-                  <div class="cards-item__description">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </div>
-                  <div class="cards-item__author">
-                    Лента.ру
-                  </div>
-                </div>
-              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -197,39 +131,51 @@
         </p>
       </footer>
 
-      <div class="popup-auth popup-login">
+      <div class="popup-auth popup-login invisible">
         <div class="popup-auth__content">
-          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Вход</h3>
-          <form class="popup-auth__auth-form auth-form" name="login">
+          <form class="popup-auth__auth-form auth-form" onsubmit="javascript:console.log('submit');" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+              <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+              <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
-              <button disabled class="auth-form__button">Войти</button>
+              <input type="password" name="password"  class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_password invisible">Минимальная длина пароля 8 символов</span>
+              <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
+              <span class="auth-form__error auth-form__error_main"></span>
+              <button class="auth-form__button">Войти</button>
               <div class="auth-form__optional">или <span class="auth-form__optional-link-registration">Зарегистрироваться</span></div>
           </form>
         </div>
       </div>
 
-      <div class="popup-auth popup-registration">
+      <div class="popup-auth popup-registration invisible">
         <div class="popup-auth__content">
-          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close">
+          <img src="<%= require('./images/close-mid.png').default%>" alt="" class="popup-auth__button-close button_close">
           <h3 class="popup-auth__title">Регистрация</h3>
           <form class="popup-auth__auth-form auth-form" name="login">
               <div class="auth-form__subtitle">Email</div>
-              <input type="text" name="mail_form" class="auth-form__input" placeholder="Введите почту" onkeyup="check();">
+              <input type="text" name="email" class="auth-form__input auth-form__input_email" placeholder="Введите почту" >
+              <span class="auth-form__error auth-form__error_email invisible">Неправильный формат email</span>
+              <span class="auth-form__error auth-form__required_email invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Пароль</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите пароль" onkeyup="check();">
+              <input type="password" name="password" class="auth-form__input auth-form__input_password" placeholder="Введите пароль" >
+              <span class="auth-form__error auth-form__error_password invisible">Минимальная длина пароля 8 символов</span>
+              <span class="auth-form__error auth-form__required_password invisible">Это обязательное поле</span>
               <div class="auth-form__subtitle">Имя</div>
-              <input type="text" name="pass_form" class="auth-form__input" placeholder="Введите своё имя" onkeyup="check();">
-              <button disabled class="auth-form__button">Зарегистрироваться</button>
-              <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
+              <input type="text" name="name" class="auth-form__input auth-form__input_name" placeholder="Введите своё имя" >
+             <span class="auth-form__error auth-form__error_name invisible">Длина имени должна быть от 2 до 30 символов</span>
+             <span class="auth-form__error auth-form__required_name invisible">Это обязательное поле</span>
+              <label class="auth-form__error auth-form__error_main"></label>
+              <button class="auth-form__button">Зарегистрироваться</button>
+            <div class="auth-form__optional">или <span class="auth-form__optional-link-login">Войти</span></div>
           </form>
         </div>
       </div>
 
     </div>
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.savedNews.entry %>"></script>
   </body>
 </html>

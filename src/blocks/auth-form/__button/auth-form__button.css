@@ -1,3 +1,5 @@
+@import url(./_invalid/auth-form__button_invalid.css);
+
 .auth-form__button {
   background-color: transparent;
   width: 100%;
@@ -9,8 +11,10 @@
   line-height: 24px;
   display: block;
   cursor: pointer;
-  color: #B6BCBF;
-  background: #E6E8EB;
+  background: #2F71E5;
+  /* color: #B6BCBF; */
+  /* background: #E6E8EB; */
+  color: #FFFFFF;
   border-radius: 100px;
-  margin-top: 39px;
+  margin-top: 8px;
 }
