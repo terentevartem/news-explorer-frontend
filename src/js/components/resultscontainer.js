@@ -23,9 +23,15 @@ class ResultsContainer extends ArticlesContainer {
 
   async renderNews(startNumber, pageSize) {
     if (this.loggedIn) {
-      this.savedLinks = await this.api.getArticles().then(articles => {
-        return articles.data.map(x => x.title)
-      });
+      try {
+        this.savedLinks = await this.api.getArticles().then(articles => {
+            return articles.data.map(x => x.title)
+        });
+      }
+      catch (err) {
+        this.savedLinks = [];
+        throw new Error(err.message);
+      }
     }
     super.renderNews(startNumber, pageSize);
     this.currentIndex = startNumber + pageSize;

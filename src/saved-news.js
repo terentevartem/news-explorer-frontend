@@ -23,9 +23,14 @@ const results = new SavedArticlesContainer({
 });
 
 async function initNews() {
-  const news = await api.getArticles();
-  results.showNews(news.data);
-}
+  try {
+    const news = await api.getArticles();
+    results.showNews(news.data);
+  }
+  catch (err) {
+    throw new Error(err.message);
+  }
+};
 
 buttonOptionalPopupRegistration.addEventListener('click', function () {
   popupRegistration.show();

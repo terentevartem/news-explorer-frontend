@@ -18,10 +18,6 @@ const buttonOptionalPopupLogin = document.querySelector(constants.buttonOptional
 const popupLogin = new AuthForm({api, element: document.querySelector(constants.popupLogin)});
 const popupRegistration = new RegistrationForm({api, element: document.querySelector(constants.popupRegistration)});
 
-async function initNews() {
-  const news = await api.getArticles();
-  results.showNews(news.data);
-}
 
 buttonOptionalPopupRegistration.addEventListener('click', function () {
   popupRegistration.show();
