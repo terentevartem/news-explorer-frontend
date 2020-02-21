@@ -104,6 +104,7 @@
 .menu-button__saved-news_black{color:#000}
 .menu-button__saved-news_inactive{color:#b6bcbf}.menu-button__saved-news_inactive:hover{color:#000}
 .menu-button__saved-news_selected{border-bottom:3px solid #000}
+.menu-button__saved-news_inactive-black{color:#b6bcbf}.menu-button__saved-news_inactive-black:hover{color:#fff}
 .menu-button__saved-news{margin-top:30px;margin-left:34px}@media (min-width:768px) and (max-width:1280px){.menu-button__saved-news{margin-top:22px;margin-left:16px}}@media (max-width:767px){.menu-button__saved-news{margin-top:22px;margin-left:16px}}
 .menu-button__about_black{color:#000}
 .menu-button__about_inactive{color:#b6bcbf}.menu-button__about_inactive:hover{color:#000}
