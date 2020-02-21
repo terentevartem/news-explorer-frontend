@@ -1,6 +1,7 @@
 @import url(./_black/menu-button__saved-news_black.css);
 @import url(./_inactive/menu-button__saved-news_inactive.css);
 @import url(./_selected/menu-button__saved-news_selected.css);
+@import url(./_inactive-black/menu-button__saved-news_inactive-black.css);
 
 .menu-button__saved-news {
   margin-top: 30px;
