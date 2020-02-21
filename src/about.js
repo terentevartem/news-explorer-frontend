@@ -9,7 +9,6 @@ import AuthForm         from './js/components/authform';
 import RegistrationForm from './js/components/registrationForm';
 import Header                 from "./js/components/header";
 import MainApi                from "./js/api/mainapi";
-import EVENTS                 from "./js/events";
 
 const api = new MainApi(constants.mainApi);
 const header = new Header({element: document.querySelector(constants.header)});

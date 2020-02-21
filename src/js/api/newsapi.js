@@ -31,7 +31,6 @@ class NewsAPI {
           }
         });
       })
-      // .catch((err) => )
   }
 }
 

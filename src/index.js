@@ -11,7 +11,6 @@ import NewsAPI          from "./js/api/newsapi";
 import SearchForm       from "./js/components/searchform";
 import ResultsContainer from "./js/components/resultscontainer";
 import AuthManager      from "./js/components/authmanager";
-import contains from "validator/es/lib/contains";
 
 const api = new MainApi(constants.mainApi);
 const newsApi = new NewsAPI({url: constants.newsUrl});
